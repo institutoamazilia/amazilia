@@ -19,8 +19,8 @@ export default function Activities() {
 
             </Box>
          </Box>
-         <Box sx={{overflow: {xs :"scroll", sm:"hidden"}, width: "100%", height: 300, flexDirection: "row", display: "flex", alignItems:"start", }}>
-            <Box component="div" sx={{ width: {xs:1000, sm:"100%"}, display: "flex", flexDirection: "row", paddingBottom:'1rem', justifyContent: { xs : "flex-start", sm:"space-between"}}}>
+         <Box sx={{overflowX    : {xs :"scroll", sm:"hidden"}, width: "100%", height: 300, flexDirection: "row", display: "flex", alignItems:"start", }}>
+            <Box component="div" sx={{ width: {xs: 1000, sm:"100%"}, display: "flex", flexDirection: "row", paddingBottom:'1rem', justifyContent: { xs : "flex-start", sm:"space-between"}}}>
                 {ActivitiesCards.cards.map((item: IActivitiesCard, index) => (
                     <Card sx={{bgcolor:"#EBEBEB", width: 233, height: 233, marginRight: "1rem", marginTop: "2rem" }}>
                         <CardActionArea>
