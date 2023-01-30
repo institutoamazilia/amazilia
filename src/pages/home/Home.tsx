@@ -7,6 +7,7 @@ import Activities from '../../components/activities/Activities'
 import NextAnnouncements from '../../components/nextAnnouncements/NextAnnouncements'
 import Testimony from '../../components/testimony/Testimony'
 import Results from '../../components/results/Results'
+import Contribution from '../../components/contribution/Contribution'
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
         <NextAnnouncements/>
         <Testimony/>
         <Results/>
+        <Contribution/>
     </div>
   )
 }
