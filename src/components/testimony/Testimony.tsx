@@ -30,7 +30,7 @@ export default function Testimony() {
     };
 
   return (
-    <Box style={BackgroundHead} sx={{ backgroundSize: 'cover',backgroundPosition: 'center', width: "100%", height:"100%", paddingBottom: "3rem"}}>
+    <Box id="testimony" style={BackgroundHead} sx={{ backgroundSize: 'cover',backgroundPosition: 'center', width: "100%", height:"100%", paddingBottom: "3rem"}}>
         <Typography sx={{ paddingLeft: { xs: "2rem", sm:"6.5rem", paddingTop: "3rem", paddingBottom: "2rem"}}} color="white" fontSize="40px" fontFamily="Fira Sans">{data.title}</Typography>
         <Box sx={{ display: "flex", width:"100%", justifyContent:"center", flexDirection:"column", alignItems : "center"}}>
             <Box >

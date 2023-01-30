@@ -24,7 +24,7 @@ const inputStyle = {
 }
 export default function NextAnnouncements() {
   return (
-    <Box bgcolor="#F2A03D" sx={{display: "flex"}}>
+    <Box id="Próximos Editais" bgcolor="#F2A03D" sx={{display: "flex"}}>
         <Box sx={{paddingLeft :"6.5rem", maxWidth: "50%" , paddingTop : "2.5rem", paddingBottom: "1.9rem"}} >
             <Typography fontFamily="Fira Sans" variant='h3' color="#260441">{data.title}</Typography>
             <Typography my="1rem" fontFamily="Open Sans" color="#181D27">{data.subt}</Typography>

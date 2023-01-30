@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <ThemeProvider theme={responsiveTheme}>
-        <Home/>
+        <Home />
       </ThemeProvider>
     </>
   )

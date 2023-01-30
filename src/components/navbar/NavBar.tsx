@@ -13,8 +13,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import Logo from '../../assets/logo.png'
 
-const pages = ['Quem Somos', 'Impacto', 'FORTALECIMENTO de OSC', 'APOIAR', 'VOLUNTARIADO', 'CONTATO'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const pages = ['Home', 'Atividades que fazemos', 'Próximos Editais', 'Testemunhos', 'VOLUNTARIADO', 'CONTATO'];
 
 function NavBar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
@@ -36,7 +35,7 @@ function NavBar() {
   };
 
   return (
-    <AppBar position="fixed">
+    <AppBar id="appbar" position="fixed">
       <Container maxWidth="xl" style={{paddingLeft: "10%"}}>
         <Toolbar disableGutters>
           <img src={Logo} alt="logo" />
@@ -70,7 +69,7 @@ function NavBar() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <MenuItem key={page} onClick={handleCloseNavMenu} >
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
               ))}
@@ -100,6 +99,7 @@ function NavBar() {
                 key={page}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block', paddingLeft: "2rem" }}
+                href={`#${page}`}
               >
                 {page}
               </Button>

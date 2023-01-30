@@ -10,7 +10,7 @@ import { IconButton } from '@mui/material';
 
 export default function Activities() {
   return (
-    <Box sx={{width: "100%", height: 700,display: "flex", flexDirection: "column", justifyContent: { xs: "flex-start", sm: "center"}, paddingLeft: { xs: "2rem", sm:"6.5rem"},  paddingRight: { xs: "2rem", sm:"6.5rem"}, marginTop:{ xs: "4rem", sm:"0"}}}>
+    <Box id="Atividades que fazemos" sx={{width: "100%", height: 700,display: "flex", flexDirection: "column", justifyContent: { xs: "flex-start", sm: "center"}, paddingLeft: { xs: "2rem", sm:"6.5rem"},  paddingRight: { xs: "2rem", sm:"6.5rem"}, marginTop:{ xs: "4rem", sm:"0"}}}>
          <Box >
             <Box sx={{ width: { xs: "100%", sm: "70%"}, }}>
                 <Typography  fontFamily="Fira Sans" variant="h5" gutterBottom>{ActivitiesTitle}</Typography>

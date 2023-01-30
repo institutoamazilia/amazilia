@@ -8,7 +8,7 @@ import Container from '@mui/material/Container';
 
 export default function Header() {
   return (
-    <Box bgcolor="#522D6D" sx={{width: "100%", height: 700, display: "flex", position: "relative", justifyContent: "space-between", paddingTop: { xs: '6rem', md: '8rem' }, flexDirection: { xs: 'column', md: 'row' }}}>
+    <Box id="Home" bgcolor="#522D6D" sx={{width: "100%", height: 700, display: "flex", position: "relative", justifyContent: "space-between", paddingTop: { xs: '6rem', md: '8rem' }, flexDirection: { xs: 'column', md: 'row' }}}>
         <Box sx={{ gap: "1rem", display: "flex", justifyContent: "center", alignContent: "center", alignItems: "center",  maxWidth: {xs: "100%", sm: "50%"}, paddingLeft:"2rem", paddingRight:"2rem"}}>
             <Box sx={{ width: {xs: "100%", sm: "80%"}}}>
                 <Typography  fontFamily="Fira Sans" color="white" variant="h3" gutterBottom>{dataHeader.title}</Typography>
