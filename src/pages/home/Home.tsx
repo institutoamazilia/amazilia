@@ -10,7 +10,7 @@ import Results from '../../components/results/Results'
 
 export default function Home() {
   return (
-    <div style={{scrollBehavior: "smooth"}}>
+    <div>
         <CssBaseline/> 
         <NavBar/>
         <Header/>
