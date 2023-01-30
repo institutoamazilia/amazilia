@@ -13,7 +13,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import Logo from '../../assets/logo.png'
 
-const pages = ['Home', 'Atividades que fazemos', 'Próximos Editais', 'Testemunhos', 'VOLUNTARIADO', 'CONTATO'];
+const pages = ['Home', 'Atividades que fazemos', 'Próximos Editais', 'Testemunhos', 'Apoiadores', 'CONTATO'];
 
 function NavBar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
