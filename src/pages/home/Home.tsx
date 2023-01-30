@@ -9,6 +9,7 @@ import Testimony from '../../components/testimony/Testimony'
 import Results from '../../components/results/Results'
 import Contribution from '../../components/contribution/Contribution'
 import Supporters from '../../components/supporters/Supporters'
+import Footer from '../../components/footer/Footer'
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
         <Results/>
         <Contribution/>
         <Supporters/>
+        <Footer/>
     </div>
   )
 }
