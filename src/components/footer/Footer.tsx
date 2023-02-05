@@ -12,7 +12,8 @@ const BackgroundFooter = { backgroundImage: "url(" + background + ")" };
 
 export default function Footer() {
   const [email, setEmail] = React.useState("");
-  const apiKey = process.env.SENDINBLUE_API_KEY;
+
+  const apiKey = import.meta.env.VITE_SENDINBLUE_API_KEY;
 
   const handleSubmit = async (event: { preventDefault: () => void }) => {
     event.preventDefault();

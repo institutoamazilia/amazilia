@@ -13,10 +13,10 @@ export default function NextAnnouncements() {
 
   const [message, setMessage] = useState("");
   const [success, setSuccess] = useState(false);
-  const apiKey = process.env.SENDINBLUE_API_KEY;
 
   const handleSubmit = async (event: { preventDefault: () => void }) => {
     event.preventDefault();
+    const apiKey = import.meta.env.VITE_SENDINBLUE_API_KEY;
 
     try {
       const response = await fetch("https://api.sendinblue.com/v3/contacts", {
