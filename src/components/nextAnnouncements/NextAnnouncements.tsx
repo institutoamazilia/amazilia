@@ -16,7 +16,7 @@ export default function NextAnnouncements() {
 
   const handleSubmit = async (event: { preventDefault: () => void }) => {
     event.preventDefault();
-    const apiKey = import.meta.env.VITE_SENDINBLUE_API_KEY;
+    const apiKey = import.meta.env.VITE_SENDINBLUE_APIKEY;
 
     try {
       const response = await fetch("https://api.sendinblue.com/v3/contacts", {
@@ -28,7 +28,7 @@ export default function NextAnnouncements() {
         },
         body: JSON.stringify({
           email,
-          listIds: [6], //	Editais
+          listIds: [3], //	Editais
           attributes: { firstname: name, message: message },
         }),
       });

@@ -13,7 +13,7 @@ const BackgroundFooter = { backgroundImage: "url(" + background + ")" };
 export default function Footer() {
   const [email, setEmail] = React.useState("");
 
-  const apiKey = import.meta.env.VITE_SENDINBLUE_API_KEY;
+  const apiKey = import.meta.env.VITE_SENDINBLUE_APIKEY;
 
   const handleSubmit = async (event: { preventDefault: () => void }) => {
     event.preventDefault();
@@ -28,7 +28,7 @@ export default function Footer() {
         },
         body: JSON.stringify({
           email,
-          listIds: [5], //	newsLetter list
+          listIds: [4], //	newsLetter list
         }),
       });
 
