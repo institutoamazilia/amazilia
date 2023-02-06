@@ -69,39 +69,39 @@ export default function Activities() {
           }}
         >
           {ActivitiesCards.cards.map((item: IActivitiesCard, index) => (
-            <CustomCard key={uuidv4()} />
+            <Card
+              key={uuidv4()}
+              sx={{
+                bgcolor: "#EBEBEB",
+                width: 233,
+                height: 233,
+                marginRight: "1rem",
+                marginTop: "2rem",
+              }}
+            >
+              <CardActionArea key={uuidv4()}>
+                <CardContent key={uuidv4()}>
+                  <img
+                    key={uuidv4()}
+                    src={item.icon}
+                    alt={`icone ${item.title}`}
+                  />
+                  <Typography
+                    key={uuidv4()}
+                    mt="1rem"
+                    fontFamily="Fira Sans"
+                    color="#495456"
+                    variant="body1"
+                  >
+                    {" "}
+                    {item.title}
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+            </Card>
           ))}
         </Box>
       </Box>
     </Box>
   );
 }
-
-const CustomCard = (item: any) => {
-  return (
-    <Card
-      sx={{
-        bgcolor: "#EBEBEB",
-        width: 233,
-        height: 233,
-        marginRight: "1rem",
-        marginTop: "2rem",
-      }}
-    >
-      <CardActionArea>
-        <CardContent>
-          <img src={item.icon} alt={`icone ${item.title}`} />
-          <Typography
-            mt="1rem"
-            fontFamily="Fira Sans"
-            color="#495456"
-            variant="body1"
-          >
-            {" "}
-            {item.title}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-    </Card>
-  );
-};
