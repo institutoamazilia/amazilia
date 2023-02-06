@@ -37,7 +37,7 @@ export default function Testimony() {
 
   return (
     <Box
-      id="Testemunhos"
+      id="Depoimentos"
       style={BackgroundHead}
       sx={{
         backgroundSize: "cover",
