@@ -16,9 +16,9 @@ import { v4 as uuidv4 } from "uuid";
 
 const pages = [
   "Home",
-  "Atividades que fazemos",
+  "O que fazemos",
   "Próximos Editais",
-  "Testemunhos",
+  "Depoimentos",
   "Apoiadores",
 ];
 
