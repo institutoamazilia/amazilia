@@ -25,7 +25,12 @@ export default function Activities() {
     >
       <Box>
         <Box sx={{ width: { xs: "100%", sm: "70%" } }}>
-          <Typography fontFamily="Fira Sans" variant="h5" gutterBottom>
+          <Typography
+            marginTop={1}
+            fontFamily="Fira Sans"
+            variant="h5"
+            gutterBottom
+          >
             {ActivitiesTitle}
           </Typography>
           <Typography
@@ -58,49 +63,32 @@ export default function Activities() {
           alignItems: "start",
         }}
       >
-        <Box
-          component="div"
-          sx={{
-            width: { xs: 1000, sm: "100%" },
-            display: "flex",
-            flexDirection: "row",
-            paddingBottom: "1rem",
-            justifyContent: { xs: "flex-start", sm: "space-between" },
-          }}
-        >
-          {ActivitiesCards.cards.map((item: IActivitiesCard, index) => (
-            <Card
-              key={uuidv4()}
-              sx={{
-                bgcolor: "#EBEBEB",
-                width: 233,
-                height: 233,
-                marginRight: "1rem",
-                marginTop: "2rem",
-              }}
-            >
-              <CardActionArea key={uuidv4()}>
-                <CardContent key={uuidv4()}>
-                  <img
-                    key={uuidv4()}
-                    src={item.icon}
-                    alt={`icone ${item.title}`}
-                  />
-                  <Typography
-                    key={uuidv4()}
-                    mt="1rem"
-                    fontFamily="Fira Sans"
-                    color="#495456"
-                    variant="body1"
-                  >
-                    {" "}
-                    {item.title}
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-            </Card>
-          ))}
-        </Box>
+        {ActivitiesCards.cards.map((item: IActivitiesCard, index) => (
+          <Card
+            key={uuidv4()}
+            sx={{
+              bgcolor: "#EBEBEB",
+              minWidth: 233,
+              width: 233,
+              height: 233,
+              marginRight: "1rem",
+              marginTop: "2rem",
+            }}
+          >
+            <CardContent key={uuidv4()}>
+              <img key={uuidv4()} src={item.icon} alt={`icone ${item.title}`} />
+              <Typography
+                key={uuidv4()}
+                mt="1rem"
+                fontFamily="Fira Sans"
+                color="#495456"
+                variant="body1"
+              >
+                {item.title}
+              </Typography>
+            </CardContent>
+          </Card>
+        ))}
       </Box>
     </Box>
   );

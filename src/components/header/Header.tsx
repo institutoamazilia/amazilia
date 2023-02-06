@@ -12,7 +12,7 @@ export default function Header() {
       bgcolor="#522D6D"
       sx={{
         width: "100%",
-        height: "100vh",
+        height: 700,
         display: "flex",
         position: "relative",
         justifyContent: "space-between",

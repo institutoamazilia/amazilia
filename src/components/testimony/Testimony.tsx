@@ -34,7 +34,7 @@ export default function Testimony() {
 
   return (
     <Box
-      id="testimony"
+      id="Testemunhos"
       style={BackgroundHead}
       sx={{
         backgroundSize: "cover",
@@ -142,8 +142,9 @@ export default function Testimony() {
       </Box>
 
       {/* parte de control */}
-      <Box display="flex" justifyContent="space-between" width="80%" mt={2}>
+      <Box display="flex" justifyContent="space-around" mt={2}>
         <div></div>
+
         <Typography color="white">{currentIndex}/5</Typography>
         <Box>
           <Button

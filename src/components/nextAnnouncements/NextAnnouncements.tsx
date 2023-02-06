@@ -70,7 +70,7 @@ export default function NextAnnouncements() {
                 bgcolor: "white",
                 borderRadius: "6px",
                 color: "#160226",
-                width: { xs: "90%", sm: "40%" },
+                width: { xs: "90%", sm: "auto" },
               }}
               id="name-basic"
               placeholder="Nome"
@@ -88,7 +88,7 @@ export default function NextAnnouncements() {
                 marginTop: { xs: "1rem", sm: "0" },
 
                 color: "#160226",
-                width: { xs: "100%", sm: "50%" },
+                width: { xs: "90%", sm: "auto" },
               }}
               id="name-basic"
               placeholder="E-mail"

@@ -20,7 +20,6 @@ const pages = [
   "Próximos Editais",
   "Testemunhos",
   "Apoiadores",
-  "CONTATO",
 ];
 
 function NavBar() {

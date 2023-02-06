@@ -89,10 +89,10 @@ export default function Footer() {
               assinar boletim
             </Button>
           </FormControl>
-          <Box sx={{ display: "flex", alignItems: "center", color: "white" }}>
+          {/* <Box sx={{ display: "flex", alignItems: "center", color: "white" }}>
             <Checkbox sx={{ color: "white" }} />
             <Typography>Concordo com a Política de Privacidade</Typography>
-          </Box>
+          </Box> */}
         </Box>
 
         <Box>
