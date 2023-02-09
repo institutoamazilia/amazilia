@@ -13,7 +13,7 @@ import braga from '../../assets/braga.png'
 export const data = { 
     title: "Agradecemos aos nossos apoiadores pro bono",
     images: [image1, image2, image3, image4 , image5],
-    title2: "Agradecemos ao nosso parceiro de programas",
+    title2: "Conheça nosso time do Amazilia",
     images2: ibab,
     title3: "Nosso time",
     images3: [ {
@@ -23,7 +23,7 @@ export const data = {
     }, 
     {   
         img: doug,
-        title: "Douglas T. Alves",
+        title: "Douglas Alves",
         responsibility: "Vice-Presidente",
     }, 
     {
