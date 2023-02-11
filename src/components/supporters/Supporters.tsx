@@ -42,7 +42,7 @@ export default function Supporters() {
         fontSize="28px"
         sx={{ color: "#260441", paddingTop: "4rem" }}
       >
-        {data.title}
+        {data.title3}
       </Typography>
       <Box
         sx={{
