@@ -11,11 +11,11 @@ import braga from '../../assets/braga.png'
 
 
 export const data = { 
-    title: "Agradecemos aos nossos apoiadores pro bono",
+    title: "Agradecemos nossos apoiadores pro bono",
     images: [image1, image2, image3, image4 , image5],
-    title2: "Conheça nosso time do Amazilia",
+    title2: "Agradecemos nossos parceiros de projetos",
     images2: ibab,
-    title3: "Nosso time",
+    title3: "Gente que faz o Amazilia acontecer",
     images3: [ {
         img: melissa,
         title: "Melissa Weng",
@@ -36,4 +36,4 @@ export const data = {
         responsibility: "Comunicação",
 }],
 
-}
+} 
