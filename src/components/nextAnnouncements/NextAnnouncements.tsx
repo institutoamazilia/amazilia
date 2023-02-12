@@ -104,7 +104,7 @@ export default function NextAnnouncements() {
               bgcolor: "white",
               borderRadius: "6px",
               color: "#160226",
-              width: { xs: "90%" },
+              width: { xs: "90%", md: "100%" },
             }}
             multiline
             rows={4}
