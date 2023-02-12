@@ -15,14 +15,6 @@ export interface IActivitiesCard {
   title: string;
 }
 
-export const ActivitiesTitle = (
-  <h1 style={{ color: "#522D6D" }}>
-    Transformando <span style={{ color: "#E15383" }}>boas intenções</span>{" "}
-    <br />
-    em <span style={{ color: "#E15383" }}>realidade de impacto</span>
-  </h1>
-);
-
 export const ActivitiesCards: IActivities = {
   subtitle1:
     "Capacitamos gestores de OSCs (ONGs) para que possam gerar melhor impacto social positivo.",

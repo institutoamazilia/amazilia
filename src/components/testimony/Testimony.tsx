@@ -10,6 +10,7 @@ import Button, { ButtonProps } from "@mui/material/Button";
 import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import { useTheme } from "@mui/material/styles";
+import { v4 as uuidv4 } from "uuid";
 
 import { data } from "./data";
 import styled from "@mui/material/styles/styled";
@@ -89,6 +90,7 @@ export default function Testimony() {
             >
               {data.cards.map((item, index) => (
                 <Card
+                  key={uuidv4()}
                   id={`${index}`}
                   sx={{
                     display: "flex",
@@ -99,12 +101,14 @@ export default function Testimony() {
                   }}
                 >
                   <CardMedia
+                    key={uuidv4()}
                     component="img"
                     sx={{ width: 168, height: 168 }}
                     src={item.img}
                     alt="Perfil"
                   />
                   <Box
+                    key={uuidv4()}
                     sx={{
                       display: "flex",
                       flexDirection: "column",
@@ -112,6 +116,7 @@ export default function Testimony() {
                     }}
                   >
                     <CardContent
+                      key={uuidv4()}
                       sx={{
                         display: "flex",
                         flexDirection: "column",
@@ -120,6 +125,7 @@ export default function Testimony() {
                       }}
                     >
                       <Typography
+                        key={uuidv4()}
                         fontFamily="Open Sans"
                         component="div"
                         fontSize="14px"
@@ -128,6 +134,7 @@ export default function Testimony() {
                       </Typography>
                       <div>
                         <Typography
+                          key={uuidv4()}
                           color="#522D6D"
                           variant="subtitle1"
                           component="div"
@@ -135,6 +142,7 @@ export default function Testimony() {
                           {item.name}
                         </Typography>
                         <Typography
+                          key={uuidv4()}
                           color="#522D6D"
                           variant="subtitle1"
                           component="div"
