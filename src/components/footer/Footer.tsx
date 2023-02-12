@@ -42,7 +42,7 @@ export default function Footer() {
 
   return (
     <Box id="footer" style={BackgroundFooter} sx={{ objectFit: "contain" }}>
-      <Box paddingLeft={"5%"} pt="10%">
+      <Box paddingLeft={"5%"} pt={{ xs: "10%", md: "2%" }}>
         <img src={Logo} />
       </Box>
       <Box
