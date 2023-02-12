@@ -1,17 +1,17 @@
 
 export const data = {
     title: "Quais resultados já alcançamos?",
-    subt: "Dados acumulados de 2020 a maio de 2022.",
+    subt: "Dados acumulados de 2020 a janeiro de 2023.",
     cards: [
       {
         title: "Impacto direto em",
         values: [
           {
-            value: "170",
+            value: "160",
             title: "gestores sociais",
           },
           {
-            value: "70",
+            value: "67",
             title: "OSCs participantes",
           }
         ]
@@ -20,11 +20,11 @@ export const data = {
         title: "Sedes das OSCs",
         values: [
           {
-            value: "18",
+            value: "17",
             title: "Estados brasileiros",
           },
           {
-            value: "113",
+            value: "116",
             title: "voluntários engajados",
           }
         ]

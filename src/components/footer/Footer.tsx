@@ -109,17 +109,14 @@ export default function Footer() {
 
         <Box>
           <Typography fontFamily="Fira Sans" color="white">
-            Contribua com O amazilia
+            Contribua com a causa do Amazilia
           </Typography>
           <Typography fontFamily="Open Sans" color="white">
+            PIX: 37389697000144 <br / >
             Banco Itaú (341) <br />
-            Agência: 0151
-            <br />
-            Conta corrente: 14.773-3
-            <br />
-            CNPJ: 37.389.697/0001-44
-            <br />
-            PIX: 37389697000144
+            Agência: 0151             <br />
+            Conta corrente: 14.773-3             <br />
+            CNPJ: 37.389.697/0001-44             <br />
           </Typography>
         </Box>
       </Box>
