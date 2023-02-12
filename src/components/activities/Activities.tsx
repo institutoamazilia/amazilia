@@ -1,7 +1,7 @@
 import React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import { ActivitiesCards, ActivitiesTitle, IActivitiesCard } from "./data";
+import { ActivitiesCards, IActivitiesCard } from "./data";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
@@ -28,16 +28,18 @@ export default function Activities() {
           <Typography
             marginTop={1}
             fontFamily="Fira Sans"
-            variant="h5"
+            color="#522D6D"
             gutterBottom
+            variant="h3"
           >
-            {ActivitiesTitle}
+            Transformando{" "}
+            <span style={{ color: "#E15383" }}>boas intenções</span> <br />
+            em <span style={{ color: "#E15383" }}>realidade de impacto</span>
           </Typography>
           <Typography
             color="#495456"
             lineHeight={"30px"}
             fontFamily="Open Sans"
-            variant="h6"
             gutterBottom
           >
             {ActivitiesCards.subtitle1}
@@ -46,7 +48,6 @@ export default function Activities() {
             color="#495456"
             lineHeight={"30px"}
             fontFamily="Open Sans"
-            variant="h6"
             gutterBottom
           >
             {ActivitiesCards.subtitle2}
