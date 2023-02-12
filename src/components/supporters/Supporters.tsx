@@ -7,7 +7,11 @@ export default function Supporters() {
   return (
     <Box
       id="Apoiadores"
-      sx={{ paddingLeft: "6rem", paddingTop: "4rem", paddingBottom: "4rem" }}
+      sx={{
+        paddingLeft: { xs: "1rem", sm: "6rem" },
+        paddingTop: "4rem",
+        paddingBottom: "4rem",
+      }}
     >
       {/*------------- section 1 -------------*/}
       <Typography
@@ -17,9 +21,20 @@ export default function Supporters() {
       >
         {data.title}
       </Typography>
-      <Box style={{ marginTop: "2rem", marginBottom: "2rem" }}>
+      <Box
+        sx={{
+          marginTop: "2rem",
+          marginBottom: "2rem",
+          gap: { xs: "1rem", sm: "6rem" },
+        }}
+      >
         {data.images.map((item, index) => (
-          <img key={uuidv4()} style={{ paddingRight: "6rem" }} src={item} />
+          <img
+            key={uuidv4()}
+            src={item}
+            loading="lazy"
+            style={{ paddingTop: "1rem" }}
+          />
         ))}
       </Box>
       {/*------------- section 2 ------------- */}
@@ -52,17 +67,28 @@ export default function Supporters() {
           flexDirection: "row",
         }}
       >
-        {data.images3.map((item, index) => (
-          <Box key={uuidv4()} sx={{ diplay: "flex", textAlign: "center" }}>
-            <img key={uuidv4()} src={item.img} />
-            <Typography key={uuidv4()} fontFamily="Fira Sans" color="#522D6D">
-              {item.title}
-            </Typography>
-            <Typography key={uuidv4()} fontFamily="Fira Sans" color="#B06C18">
-              {item.responsibility}
-            </Typography>
-          </Box>
-        ))}
+        <Box
+          sx={{
+            overflowX: { xs: "scroll", sm: "hidden" },
+            width: "100%",
+            height: 400,
+            flexDirection: "row",
+            display: "flex",
+            alignItems: "start",
+          }}
+        >
+          {data.images3.map((item, index) => (
+            <Box key={uuidv4()} sx={{ diplay: "flex", textAlign: "center" }}>
+              <img key={uuidv4()} src={item.img} />
+              <Typography key={uuidv4()} fontFamily="Fira Sans" color="#522D6D">
+                {item.title}
+              </Typography>
+              <Typography key={uuidv4()} fontFamily="Fira Sans" color="#B06C18">
+                {item.responsibility}
+              </Typography>
+            </Box>
+          ))}
+        </Box>
       </Box>
     </Box>
   );
