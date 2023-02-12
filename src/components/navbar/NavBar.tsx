@@ -5,17 +5,13 @@ import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
-// import MenuIcon from '@mui/icons-material/Menu';
 import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
+import MenuIcon from "@mui/icons-material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Logo from "../../assets/logo.png";
 import { v4 as uuidv4 } from "uuid";
 import { links } from "./data";
-
-
 
 function NavBar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
@@ -44,8 +40,16 @@ function NavBar() {
     <AppBar id="appbar" position="fixed">
       <Container maxWidth="xl" style={{ paddingLeft: "10%" }}>
         <Toolbar disableGutters>
-          <img src={Logo} alt="logo" />
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+          <Button href={"#Home"}>
+            <img src={Logo} alt="logo" />
+          </Button>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "flex", md: "none" },
+              justifyContent: "flex-end",
+            }}
+          >
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -54,7 +58,7 @@ function NavBar() {
               onClick={handleOpenNavMenu}
               color="inherit"
             >
-              {/* <MenuIcon /> */}
+              <MenuIcon />
             </IconButton>
             <Menu
               id="menu-appbar"
@@ -76,31 +80,17 @@ function NavBar() {
             >
               {links.map((page) => (
                 <MenuItem key={uuidv4()} onClick={handleCloseNavMenu}>
-                  <Typography key={uuidv4()} textAlign="center">
+                  <Button
+                    key={page}
+                    onClick={handleCloseNavMenu}
+                    href={`#${page}`}
+                  >
                     {page}
-                  </Typography>
+                  </Button>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href=""
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            LOGO
-          </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {links.map((page) => (
               <Button
