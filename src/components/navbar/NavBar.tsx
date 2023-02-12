@@ -13,14 +13,9 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import Logo from "../../assets/logo.png";
 import { v4 as uuidv4 } from "uuid";
+import { links } from "./data";
 
-const pages = [
-  "Home",
-  "O que fazemos",
-  "Próximos Editais",
-  "Depoimentos",
-  "Apoiadores",
-];
+
 
 function NavBar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
@@ -79,7 +74,7 @@ function NavBar() {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page) => (
+              {links.map((page) => (
                 <MenuItem key={uuidv4()} onClick={handleCloseNavMenu}>
                   <Typography key={uuidv4()} textAlign="center">
                     {page}
@@ -107,7 +102,7 @@ function NavBar() {
             LOGO
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
+            {links.map((page) => (
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}

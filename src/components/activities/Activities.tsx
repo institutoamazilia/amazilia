@@ -11,7 +11,7 @@ import { v4 as uuidv4 } from "uuid";
 export default function Activities() {
   return (
     <Box
-      id="Atividades que fazemos"
+      id="O que fazemos"
       sx={{
         width: "100%",
         height: 700,
