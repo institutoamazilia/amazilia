@@ -7,9 +7,9 @@ import { v4 as uuidv4 } from "uuid";
 export default function Results() {
   return (
     <>
-      <Box id="results" sx={{ padding: "6rem" }}>
+      <Box id="results" sx={{ padding: { xs: "2rem", sm: "6rem" } }}>
         <Box>
-          <Typography fontFamily="Fira Sans" color="#522D6D" variant="h3">
+          <Typography fontFamily="Fira Sans" color="#522D6D" fontSize="40px">
             {data.title}
           </Typography>
           <Typography fontFamily="Open Sans" color="#260441">
@@ -18,9 +18,10 @@ export default function Results() {
           <Box
             sx={{
               display: "flex",
-              flexDirection: "row",
+              flexDirection: { xs: "column", sm: "row" },
               width: "100%",
               marginTop: "3rem",
+              gap: { xs: "3rem", sm: 0 },
             }}
           >
             {data.cards.map((item, index) => (
@@ -40,8 +41,9 @@ export default function Results() {
                   sx={{
                     display: "flex",
                     flexDirection: "row",
-                    width: "90%",
+                    width: { xs: "100%", md: "90%" },
                     justifyContent: "space-between",
+                    textAlign: { xs: "center", sm: "start" },
                   }}
                 >
                   {item.values.map((i, key) => (
@@ -64,7 +66,10 @@ export default function Results() {
                       </Typography>
                       <Typography
                         key={uuidv4()}
-                        width="70%"
+                        sx={{
+                          width: { xs: "80%", sm: "70%" },
+                          textAlign: { xs: "center", sm: "start" },
+                        }}
                         fontFamily="Fira Sans"
                         fontSize="28px"
                         color="#522D6D"
