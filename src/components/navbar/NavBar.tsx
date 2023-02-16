@@ -13,12 +13,10 @@ import { v4 as uuidv4 } from "uuid";
 import { links } from "./data";
 
 function NavBar() {
-  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
-    null
-  );
-  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
-    null
-  );
+  const [anchorElNav, setAnchorElNav] =
+    React.useState<null | HTMLElement>(null);
+  const [anchorElUser, setAnchorElUser] =
+    React.useState<null | HTMLElement>(null);
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -36,7 +34,7 @@ function NavBar() {
   };
 
   return (
-    <AppBar id="appbar" position="fixed">
+    <AppBar id="appbar">
       <Container maxWidth="xl" style={{ paddingLeft: "10%" }}>
         <Toolbar disableGutters>
           <Button href={"#Home"}>

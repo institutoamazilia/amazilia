@@ -4,54 +4,26 @@ import hearderimage from "../../assets/hearder-background.png";
 import Typography from "@mui/material/Typography";
 import { dataHeader } from "./data";
 import Container from "@mui/material/Container";
-
+import { PageContent, Subtitle, Title } from "../layout/pageStructure";
+import * as Layout from "../../components/header/Header.styles";
+import COLORS from "../layout/colors";
 export default function Header() {
   return (
-    <Box
-      id="Home"
-      bgcolor="#522D6D"
-      sx={{
-        width: "100%",
-        height: 700,
-        display: "flex",
-        position: "relative",
-        justifyContent: "space-between",
-        paddingTop: { xs: "6rem", md: "8rem" },
-        flexDirection: { xs: "column", md: "row" },
-      }}
-    >
-      <Box
-        sx={{
-          gap: "1rem",
-          display: "flex",
-          justifyContent: "center",
-          alignContent: "center",
-          alignItems: "center",
-          maxWidth: { xs: "100%", sm: "50%" },
-          paddingLeft: "2rem",
-          paddingRight: "2rem",
-        }}
-      >
-        <Box sx={{ width: { xs: "100%", sm: "80%" } }}>
-          <Typography
-            fontFamily="Fira Sans"
-            color="white"
-            variant="h3"
+    <PageContent id="Home" bgcolor="#522D6D">
+      <Layout.titleContainer>
+        <Layout.headerContainer>
+          <Title
+            sx={{ fontSize: { xs: "30px", sm: "40px" } }}
+            color={COLORS.white}
             gutterBottom
           >
             {dataHeader.title}
-          </Typography>
-          <Typography
-            lineHeight={"30px"}
-            fontFamily="Open Sans"
-            color="white"
-            variant="h6"
-            gutterBottom
-          >
+          </Title>
+          <Subtitle color={COLORS.white} gutterBottom>
             {dataHeader.subtitle}
-          </Typography>
-        </Box>
-      </Box>
+          </Subtitle>
+        </Layout.headerContainer>
+      </Layout.titleContainer>
       <Box
         sx={{
           justifyContent: "flex-end",
@@ -66,6 +38,6 @@ export default function Header() {
           alt="foto equipe amazilia"
         />
       </Box>
-    </Box>
+    </PageContent>
   );
 }
