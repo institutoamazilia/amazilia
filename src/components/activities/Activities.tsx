@@ -6,11 +6,11 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import { v4 as uuidv4 } from "uuid";
 import * as Layout from "./Activities.styles";
-import { PageContent } from "../layout/pageStructure";
+import { Section } from "../layout/pageStructure";
 
 export default function Activities() {
   return (
-    <PageContent id="O que fazemos">
+    <Section id="O que fazemos">
       <Box sx={{ width: { xs: "100%", sm: "70%" } }}>
         <Layout.title gutterBottom variant="h3">
           Transformando <span style={{ color: "#E15383" }}>boas intenções</span>{" "}
@@ -34,6 +34,6 @@ export default function Activities() {
           </Layout.card>
         ))}
       </Layout.cardContainer>
-    </PageContent>
+    </Section>
   );
 }

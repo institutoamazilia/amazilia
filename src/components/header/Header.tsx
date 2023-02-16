@@ -4,12 +4,12 @@ import hearderimage from "../../assets/hearder-background.png";
 import Typography from "@mui/material/Typography";
 import { dataHeader } from "./data";
 import Container from "@mui/material/Container";
-import { PageContent, Subtitle, Title } from "../layout/pageStructure";
+import { Section, Subtitle, Title } from "../layout/pageStructure";
 import * as Layout from "../../components/header/Header.styles";
 import COLORS from "../layout/colors";
 export default function Header() {
   return (
-    <PageContent id="Home" bgcolor="#522D6D">
+    <Section id="Home" bgcolor="#522D6D">
       <Layout.titleContainer>
         <Layout.headerContainer>
           <Title
@@ -38,6 +38,6 @@ export default function Header() {
           alt="foto equipe amazilia"
         />
       </Box>
-    </PageContent>
+    </Section>
   );
 }

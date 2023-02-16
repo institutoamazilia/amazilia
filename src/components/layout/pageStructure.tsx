@@ -2,7 +2,7 @@ import { styled } from "@mui/material/styles";
 import { Box, Typography } from "@mui/material";
 import COLORS from "./colors";
 
-const PageContent = styled(Box)(({ theme }) => ({
+const Section = styled(Box)(({ theme }) => ({
   width: "100%",
   height: "100vh",
   display: "flex",
@@ -14,14 +14,6 @@ const PageContent = styled(Box)(({ theme }) => ({
     justifyContent: "start",
     height: "100%",
   },
-}));
-
-const Section = styled(Box)(({ theme }) => ({
-  display: "flex",
-  flexDirection: "column",
-  padding: "1rem",
-  alignItems: "center",
-  [theme.breakpoints.up("md")]: {},
 }));
 
 const Title = styled(Typography)(({ theme }) => ({
@@ -40,4 +32,4 @@ const Subtitle = styled(Typography)(({ theme }) => ({
   },
 }));
 
-export { PageContent, Section, Title, Subtitle };
+export { Section, Title, Subtitle };

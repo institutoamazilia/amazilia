@@ -5,7 +5,6 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { Avatar } from "@mui/material";
-import priscila from "../../assets/priscila.png";
 import { data } from "../testimony/data";
 import { v4 as uuidv4 } from "uuid";
 
