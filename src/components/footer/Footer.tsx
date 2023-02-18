@@ -42,14 +42,15 @@ export default function Footer() {
 
   return (
     <Box id="footer" style={BackgroundFooter} sx={{ objectFit: "contain" }}>
-      <Box paddingLeft={"5%"} pt="2%">
+      <Box paddingLeft={"5%"} pt={{ xs: "10%", md: "2%" }}>
         <img src={Logo} />
       </Box>
       <Box
         sx={{
-          padding: "6rem",
+          padding: { xs: "1rem", sm: "6rem" },
           display: "flex",
-          justifyContent: "space-between",
+          flexDirection: { xs: "column", sm: "row" },
+          justifyContent: { xs: "flex-start", md: "space-between" },
         }}
       >
         <Box>
@@ -66,7 +67,7 @@ export default function Footer() {
             onSubmit={handleSubmit}
             sx={{
               display: "flex",
-              flexDirection: "row",
+              flexDirection: { sx: "column", sm: "row" },
               gap: "2rem",
               alignItems: "baseline",
             }}
@@ -76,7 +77,7 @@ export default function Footer() {
               sx={{
                 bgcolor: "white",
                 borderRadius: "8px",
-                width: 400,
+                width: { sx: "300px", sm: "400px" },
                 mt: "1rem",
               }}
               type="email"
@@ -85,7 +86,11 @@ export default function Footer() {
               required
               placeholder="Seu e-mail"
             />
-            <Button type="submit" sx={{ height: "40px" }} variant="contained">
+            <Button
+              type="submit"
+              sx={{ width: { xs: "100%", sm: "100%" } }}
+              variant="contained"
+            >
               assinar boletim
             </Button>
           </FormControl>
@@ -95,7 +100,7 @@ export default function Footer() {
           </Box> */}
         </Box>
 
-        <Box>
+        <Box mt={{ xs: 5, sm: 0 }}>
           <Typography fontFamily="Fira Sans" color="white">
             FALE CONOSCO
           </Typography>
@@ -107,7 +112,7 @@ export default function Footer() {
           </Typography>
         </Box>
 
-        <Box>
+        <Box mt={{ xs: 5, sm: 0 }}>
           <Typography fontFamily="Fira Sans" color="white">
             Contribua com a causa do Amazilia
           </Typography>

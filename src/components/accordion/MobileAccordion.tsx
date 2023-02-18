@@ -5,8 +5,9 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { Avatar } from "@mui/material";
-import priscila from "../../assets/priscila.png";
 import { data } from "../testimony/data";
+import { v4 as uuidv4 } from "uuid";
+
 export default function MobileAccordion() {
   const [expanded, setExpanded] = React.useState<string | false>(false);
 
@@ -21,25 +22,35 @@ export default function MobileAccordion() {
         <Accordion
           expanded={expanded === `panel${index}`}
           onChange={handleChange(`panel${index}`)}
+          key={uuidv4()}
         >
           <AccordionSummary
+            key={uuidv4()}
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1bh-content"
             id={`panel${index}-header`}
           >
-            <Avatar src={item.img} />
+            <Avatar key={uuidv4()} src={item.img} />
 
             <div>
-              <Typography ml={2} sx={{ color: "text.secondary" }}>
+              <Typography
+                key={uuidv4()}
+                ml={2}
+                sx={{ color: "text.secondary" }}
+              >
                 {item.name}
               </Typography>
-              <Typography ml={2} sx={{ color: "text.secondary" }}>
+              <Typography
+                key={uuidv4()}
+                ml={2}
+                sx={{ color: "text.secondary" }}
+              >
                 {item.local}
               </Typography>
             </div>
           </AccordionSummary>
-          <AccordionDetails>
-            <Typography>{item.testimony}</Typography>
+          <AccordionDetails key={uuidv4()}>
+            <Typography key={uuidv4()}> {item.testimony}</Typography>
           </AccordionDetails>
         </Accordion>
       ))}
