@@ -15,8 +15,7 @@ const TitleContainer = styled(Box)(({ theme }) => ({
 
 const RelativePosition = styled(Box)(({ theme }) => ({
   position: "absolute",
-  top: 1425,
-  right: 0,
+
   [theme.breakpoints.down("md")]: {
     display: "none",
   },

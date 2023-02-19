@@ -10,7 +10,7 @@ import { Section } from "../layout/pageStructure";
 
 export default function Activities() {
   return (
-    <Section id="O que fazemos">
+    <Section flexDirection="column" id="O que fazemos">
       <Box sx={{ width: { xs: "100%", sm: "70%" } }}>
         <Layout.title gutterBottom variant="h3">
           Transformando <span style={{ color: "#E15383" }}>boas intenções</span>{" "}

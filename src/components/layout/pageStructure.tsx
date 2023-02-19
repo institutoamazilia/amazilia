@@ -6,13 +6,8 @@ const Section = styled(Box)(({ theme }) => ({
   width: "100%",
   height: "100vh",
   display: "flex",
-  flexDirection: "column",
-  padding: "6rem",
-  justifyContent: "center",
   [theme.breakpoints.down("md")]: {
-    padding: "2rem",
     justifyContent: "start",
-    height: "100%",
   },
 }));
 

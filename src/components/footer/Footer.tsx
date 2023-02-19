@@ -67,6 +67,7 @@ export default function Footer() {
             onSubmit={handleSubmit}
             sx={{
               display: "flex",
+              justifyContent: { sx: "space-between" },
               flexDirection: { sx: "column", sm: "row" },
               gap: "2rem",
               alignItems: "baseline",
@@ -117,11 +118,11 @@ export default function Footer() {
             Contribua com a causa do Amazilia
           </Typography>
           <Typography fontFamily="Open Sans" color="white">
-            PIX: 37389697000144 <br / >
+            PIX: 37389697000144 <br />
             Banco Itaú (341) <br />
-            Agência: 0151             <br />
-            Conta corrente: 14.773-3             <br />
-            CNPJ: 37.389.697/0001-44             <br />
+            Agência: 0151 <br />
+            Conta corrente: 14.773-3 <br />
+            CNPJ: 37.389.697/0001-44 <br />
           </Typography>
         </Box>
       </Box>

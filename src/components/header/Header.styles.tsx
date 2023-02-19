@@ -1,30 +1,63 @@
 import { styled } from "@mui/material/styles";
-import { Box } from "@mui/material";
+import { Box, Grid } from "@mui/material";
+import Typography from "@mui/material/Typography/Typography";
+import COLORS from "../layout/colors";
+import headerImage from "../../assets/hearder-background.png";
+
+const pageContainer = styled(Box)(({ theme }) => ({
+  display: "flex",
+  height: "700px",
+  position: "relative",
+  [theme.breakpoints.down("md")]: {
+    height: "100%",
+  },
+  [theme.breakpoints.down(1247)]: {
+    overflow: "hidden",
+  },
+}));
+
+const grid = styled(Grid)(({ theme }) => ({
+  display: "grid",
+  gridTemplateColumns: "1fr 1fr",
+  paddingLeft: "2rem",
+  height: "700px",
+  gap: "1.313rem",
+  width: "100%",
+  animation: "fadeIn",
+  animationDuration: "2s",
+  [theme.breakpoints.down(1247)]: {
+    gridTemplateColumns: "1fr",
+    justifyItems: "center",
+    // Adicione aqui as propriedades que deseja aplicar para telas menores ou iguais a 1247px de largura
+  },
+}));
 
 const titleContainer = styled(Box)(({ theme }) => ({
-  gap: "1rem",
+  maxWidth: "600px",
   display: "flex",
-  paddingLeft: "2rem",
-  paddingRight: "2rem",
   flexDirection: "column",
-  width: "50%",
+  paddingLeft: "6rem",
   justifyContent: "center",
-  alignItems: " center",
-  animation:
-    "fadeIn" /* referring directly to the animation's @keyframe declaration */,
-  animationDuration: "2s" /* don't forget to set a duration! */,
   [theme.breakpoints.down("md")]: {
-    paddingLeft: 0,
-    paddingRight: 0,
-    width: "100%",
+    paddingTop: "6rem",
+    padding: "2rem",
   },
 }));
 
-const headerContainer = styled(Box)(({ theme }) => ({
-  height: "50%",
-  [theme.breakpoints.down("md")]: {
-    height: "90vh",
+const title = styled(Typography)(({ theme }) => ({
+  [theme.breakpoints.down(1247)]: {},
+}));
+
+const image = styled("img")(({ theme }) => ({
+  objectFit: "contain",
+  bottom: "-12%",
+  right: 0,
+  position: "absolute",
+  zIndex: "0",
+  [theme.breakpoints.down("md")]: {},
+  [theme.breakpoints.down(1247)]: {
+    opacity: "0.08",
   },
 }));
 
-export { headerContainer, titleContainer };
+export { pageContainer, grid, titleContainer, image, title };

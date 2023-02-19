@@ -19,9 +19,15 @@ export default function NextAnnouncements() {
         <Form />
       </TitleContainer>
       <Box>
-        <RelativePosition>
-          <img src={image} alt="proximos editais foto" />
-        </RelativePosition>
+        <Box sx={{ position: "relative" }}>
+          <RelativePosition>
+            <img
+              style={{ position: "absolute", top: 0 }}
+              src={image}
+              alt="proximos editais foto"
+            />
+          </RelativePosition>
+        </Box>
       </Box>
     </Layout.Section>
   );
