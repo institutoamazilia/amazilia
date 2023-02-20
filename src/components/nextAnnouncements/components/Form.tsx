@@ -1,42 +1,57 @@
 import { Box, Button, FormControl, TextField } from "@mui/material";
 import React, { useState } from "react";
+import Feedback from "../../feedback/Feedback";
 import * as Layout from "./Form.styles";
+import axios from "axios";
+import { v4 as uuidv4 } from "uuid";
+
 export default function Form() {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
 
   const [message, setMessage] = useState("");
   const [success, setSuccess] = useState(false);
+  const [severity, setSeverity] =
+    useState<"success" | "warning" | "info" | "error">("success");
+  const [open, setOpen] = React.useState(false);
+  const [msg, setMsg] = React.useState("");
 
   const handleSubmit = async (event: { preventDefault: () => void }) => {
     event.preventDefault();
     const apiKey = import.meta.env.VITE_SENDINBLUE_APIKEY;
-
     try {
-      const response = await fetch("https://api.sendinblue.com/v3/contacts", {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-          "api-key": apiKey,
-        },
-        body: JSON.stringify({
-          email,
-          listIds: [3], //	Editais
-          attributes: { firstname: name, message: message },
-        }),
-      });
-
-      if (response.ok) {
-        setSuccess(true);
-        setEmail("");
-        setMessage("");
-      }
+      const response = await axios
+        .post(
+          "https://api.sendinblue.com/v3/contacts",
+          {
+            email,
+            listIds: [3], // Editais
+            attributes: { firstname: name, message: message },
+          },
+          {
+            headers: {
+              Accept: "application/json",
+              "Content-Type": "application/json",
+              "api-key": apiKey,
+            },
+          }
+        )
+        .then(() => {
+          setOpen(true);
+          setSeverity("success");
+          setMsg("Obrigado pelo interesse! Recebemos sua resposta. ❤️");
+        })
+        .catch(() => {
+          setOpen(true);
+          setSeverity("error");
+          setMsg(
+            "Erro inesperado, por favor entre em contato com nosso suporte"
+          );
+        });
     } catch (error) {
-      console.error(error);
+      console.log("Erro: ", error);
     }
   };
-
   return (
     <>
       <FormControl
@@ -87,6 +102,13 @@ export default function Form() {
           Enviar
         </Button>
       </FormControl>
+      <Feedback
+        key={uuidv4()}
+        msg={msg}
+        severity={severity}
+        open={open}
+        setOpen={setOpen}
+      />
     </>
   );
 }
