@@ -2,21 +2,21 @@ import { styled } from "@mui/material/styles";
 import { Box, Typography } from "@mui/material";
 
 const TitleContainer = styled(Box)(({ theme }) => ({
+  width: "55%",
   paddingLeft: "6.5rem",
-  maxWidth: "50%",
   paddingTop: "2.5rem",
   paddingBottom: "1.9rem",
   justifyContent: "center",
   [theme.breakpoints.down("md")]: {
     paddingLeft: "1rem",
-    maxWidth: "100%",
+    width: "100%",
+    padding: "2rem",
   },
 }));
 
 const RelativePosition = styled(Box)(({ theme }) => ({
   position: "absolute",
-  top: 1425,
-  right: 0,
+
   [theme.breakpoints.down("md")]: {
     display: "none",
   },

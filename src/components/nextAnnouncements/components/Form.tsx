@@ -1,6 +1,6 @@
 import { Box, Button, FormControl, TextField } from "@mui/material";
 import React, { useState } from "react";
-
+import * as Layout from "./Form.styles";
 export default function Form() {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
@@ -36,21 +36,20 @@ export default function Form() {
       console.error(error);
     }
   };
+
   return (
-    <div>
+    <>
       <FormControl
         component="form"
         onSubmit={handleSubmit}
-        sx={{ gap: "1rem" }}
+        sx={{
+          gap: "1rem",
+          display: "flex",
+          maxWidth: { sx: "100%", md: "60%" },
+        }}
       >
-        <Box>
-          <TextField
-            sx={{
-              bgcolor: "white",
-              borderRadius: "6px",
-              color: "#160226",
-              width: { xs: "90%", sm: "auto" },
-            }}
+        <Layout.inputContainer>
+          <Layout.input
             id="name-basic"
             placeholder="Nome"
             variant="outlined"
@@ -59,16 +58,7 @@ export default function Form() {
             onChange={(event) => setName(event.target.value)}
             required
           />
-          <TextField
-            sx={{
-              bgcolor: "white",
-              borderRadius: "6px",
-              marginLeft: { xs: "0", sm: "1rem" },
-              marginTop: { xs: "1rem", sm: "0" },
-
-              color: "#160226",
-              width: { xs: "90%", sm: "auto" },
-            }}
+          <Layout.input
             id="name-basic"
             placeholder="E-mail"
             variant="outlined"
@@ -77,18 +67,18 @@ export default function Form() {
             onChange={(event) => setEmail(event.target.value)}
             required
           />
-        </Box>
-        <TextField
+        </Layout.inputContainer>
+        <Layout.input
           sx={{
             bgcolor: "white",
             borderRadius: "6px",
             color: "#160226",
-            width: { xs: "90%", md: "100%" },
+            minWidth: "418px",
           }}
           multiline
           rows={4}
           placeholder="Deixe sua mensagem"
-        ></TextField>
+        ></Layout.input>
         <Button
           sx={{ maxWidth: "75px", fontFamily: "Fira Sans" }}
           variant="contained"
@@ -97,6 +87,6 @@ export default function Form() {
           Enviar
         </Button>
       </FormControl>
-    </div>
+    </>
   );
 }
