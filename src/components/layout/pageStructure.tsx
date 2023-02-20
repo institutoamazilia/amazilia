@@ -2,12 +2,14 @@ import { styled } from "@mui/material/styles";
 import { Box, Typography } from "@mui/material";
 import COLORS from "./colors";
 
-const Section = styled(Box)(({ theme }) => ({
+const section = styled(Box)(({ theme }) => ({
   width: "100%",
-  height: "100vh",
+  height: "50%",
   display: "flex",
+  overflow: "hidden",
   [theme.breakpoints.down("md")]: {
     justifyContent: "start",
+    height: "100%",
   },
 }));
 
@@ -27,4 +29,4 @@ const Subtitle = styled(Typography)(({ theme }) => ({
   },
 }));
 
-export { Section, Title, Subtitle };
+export { section, Title, Subtitle };

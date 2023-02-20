@@ -8,12 +8,12 @@ import Form from "./components/Form";
 
 export default function NextAnnouncements() {
   return (
-    <Layout.Section id="Próximos Editais" bgcolor="#F2A03D">
+    <Layout.section id="Próximos Editais" bgcolor="#F2A03D">
       <TitleContainer>
-        <Typography fontFamily="Fira Sans" variant="h3" color="#260441">
+        <Typography variant="h3" fontWeight="600" color="#260441">
           {data.title}
         </Typography>
-        <Typography my="1rem" fontFamily="Open Sans" color="#181D27">
+        <Typography my="1rem" variant="body2" color="#181D27">
           {data.subt}
         </Typography>
         <Form />
@@ -29,6 +29,6 @@ export default function NextAnnouncements() {
           </RelativePosition>
         </Box>
       </Box>
-    </Layout.Section>
+    </Layout.section>
   );
 }

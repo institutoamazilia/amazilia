@@ -10,9 +10,9 @@ import { Section } from "../layout/pageStructure";
 
 export default function Activities() {
   return (
-    <Section flexDirection="column" id="O que fazemos">
-      <Box sx={{ width: { xs: "100%", sm: "70%" } }}>
-        <Layout.title gutterBottom variant="h3">
+    <Layout.section id="O que fazemos">
+      <Layout.textContainer>
+        <Layout.title variant="h1">
           Transformando <span style={{ color: "#E15383" }}>boas intenções</span>{" "}
           <br />
           em <span style={{ color: "#E15383" }}>realidade de impacto</span>
@@ -23,7 +23,7 @@ export default function Activities() {
         <Layout.subtitle gutterBottom>
           {ActivitiesCards.subtitle2}
         </Layout.subtitle>
-      </Box>
+      </Layout.textContainer>
       <Layout.cardContainer>
         {ActivitiesCards.cards.map((item: IActivitiesCard, index) => (
           <Layout.card key={uuidv4()}>
@@ -34,6 +34,6 @@ export default function Activities() {
           </Layout.card>
         ))}
       </Layout.cardContainer>
-    </Section>
+    </Layout.section>
   );
 }

@@ -30,6 +30,9 @@ const grid = styled(Grid)(({ theme }) => ({
     justifyItems: "center",
     // Adicione aqui as propriedades que deseja aplicar para telas menores ou iguais a 1247px de largura
   },
+  [theme.breakpoints.down("sm")]: {
+    paddingLeft: 0,
+  },
 }));
 
 const titleContainer = styled(Box)(({ theme }) => ({
