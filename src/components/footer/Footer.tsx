@@ -1,12 +1,11 @@
 import { Box, IconButton, Divider } from "@mui/material";
-import background from "../../assets/footer-background.png";
 import Button from "@mui/material/Button/Button";
 import Checkbox from "@mui/material/Checkbox/Checkbox";
 import Feedback from "../feedback/Feedback";
 import FormControl from "@mui/material/FormControl/FormControl";
 import Link from "@mui/material/Link";
 import Logo from "../../assets/logo.png";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import TextField from "@mui/material/TextField/TextField";
 import Typography from "@mui/material/Typography";
 import { v4 as uuidv4 } from "uuid";
@@ -14,13 +13,13 @@ import NorthIcon from "@mui/icons-material/North";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-
-const BackgroundFooter = { backgroundImage: "url(" + background + ")" };
+import * as Layout from "./Footer.styles";
+import FileCopyIcon from "@mui/icons-material/FileCopy";
+import COLORS from "../layout/colors";
 
 export default function Footer() {
   const [email, setEmail] = useState("");
-
-  const apiKey = import.meta.env.VITE_SENDINBLUE_APIKEY;
+  const apiKey = import.meta.env.VITE_SENDINBLUE_API_KEY;
   const [checked, setChecked] = useState(false);
   const [severity, setSeverity] =
     useState<"success" | "warning" | "info" | "error">("success");
@@ -30,6 +29,7 @@ export default function Footer() {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setChecked(event.target.checked);
   };
+
   const handleSubmit = async (event: { preventDefault: () => void }) => {
     event.preventDefault();
 
@@ -46,78 +46,77 @@ export default function Footer() {
           listIds: [4], //	newsLetter list
         }),
       });
-      //   .then(() => {
-      //     setOpen(true);
-      //     setSeverity("success");
-      //     setMsg("E-mail recebido! Obrigado por assinar nosso boletim.❤️");
-      //   })
-      //   .catch(() => {
-      //     setOpen(true);
-      //     setSeverity("error");
-      //     setMsg(
-      //       "Erro inesperado, por favor entre em contato com nosso suporte"
-      //     );
-      //   });
 
       if (response.ok) {
-        setEmail("");
+        setSeverity("success");
+        setOpen(true);
+        setMsg("E-mail recebido! Obrigado por assinar nosso boletim.❤️");
       }
-    } catch (error) {
-      console.error(error);
+
+      const data = await response.json();
+      if (data.code === "duplicate_parameter") {
+        setSeverity("warning");
+        setOpen(true);
+        setMsg(
+          "Este endereço de e-mail já está cadastrado. Por favor, verifique e tente novamente.'"
+        );
+      }
+    } catch (error: any) {
+      if (error.code === "duplicate_parameter") {
+        console.log(
+          "Este endereço de e-mail já está cadastrado. Por favor, verifique e tente novamente."
+        ); // mensagem de erro amigável
+      } else {
+        console.error("Ocorreu um erro inesperado", error); // mensagem de erro para outros tipos de exceção
+      }
+      setSeverity("error");
+      setOpen(true);
+      setMsg(
+        "Desculpe-nos, algo não está funcionando corretamente. Por favor, tente novamente mais tarde ou entre em contato com o suporte."
+      );
     }
   };
 
+  function copyToClipboard(text: string) {
+    navigator.clipboard
+      .writeText(text)
+      .then(() => {
+        setSeverity("success");
+        setOpen(true);
+        setMsg("Texto copiado com sucesso para a área de transferência.");
+      })
+      .catch((error) => {
+        console.error(
+          "Erro ao copiar texto para a área de transferência",
+          error
+        );
+      });
+    console.log(text);
+  }
   return (
     <>
-      <Box
-        id="footer"
-        style={BackgroundFooter}
-        sx={{
-          objectFit: "cover",
-          width: "100%",
-          height: "auto",
-          paddingBottom: "6rem",
-          pl: "6rem",
-          pr: "6rem",
-        }}
-      >
-        <Box
-          style={{
-            display: "flex",
-            justifyContent: "flex-end",
-            padding: "2rem",
-            paddingRight: "4rem",
-          }}
-        >
-          <IconButton
-            style={{
-              border: "2px solid white",
-              width: "40px",
-              height: "40px",
-              borderRadius: "50%",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              color: "white",
-            }}
-            href="#Home"
-          >
+      <Layout.section id="footer">
+        <Layout.floatingButton>
+          <Layout.backHomeButton href="#Home">
             <NorthIcon />
-          </IconButton>
-        </Box>
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: { xs: "column", sm: "row" },
-            justifyContent: { xs: "flex-start", md: "space-between" },
-          }}
-          pb="2rem"
-        >
-          <Box>
-            <Typography fontFamily="Fira Sans" variant="h5" color="#FBFBFB">
+          </Layout.backHomeButton>
+        </Layout.floatingButton>
+        <Layout.newsLetterContainer>
+          <Layout.inputContainer>
+            <Typography
+              variant="h3"
+              color={COLORS.Neutral.lightGrey3}
+              fontWeight={600}
+              mb=".5rem"
+            >
               Receba nosso Boletim Informativo
             </Typography>
-            <Typography fontFamily="Open Sans" variant="body1" color="#FBFBFB">
+            <Typography
+              mb=".5rem"
+              fontFamily="Open Sans"
+              variant="body1"
+              color="#FBFBFB"
+            >
               E fique por dentro de todas as novidades do Amazilia.
             </Typography>
             <FormControl
@@ -131,6 +130,7 @@ export default function Footer() {
                 flexDirection: { sx: "column", sm: "row" },
                 gap: "2rem",
                 alignItems: "baseline",
+                width: "100%",
               }}
             >
               <TextField
@@ -138,8 +138,7 @@ export default function Footer() {
                 sx={{
                   bgcolor: "white",
                   borderRadius: "8px",
-                  width: { sx: "300px", sm: "400px" },
-                  mt: "1rem",
+                  width: { xs: "100%", sm: "400px" },
                 }}
                 type="email"
                 value={email}
@@ -150,6 +149,10 @@ export default function Footer() {
               <Button
                 type="submit"
                 variant="contained"
+                sx={{
+                  width: { xs: "100%", sm: "auto" },
+                  minWidth: "150px",
+                }}
                 disabled={checked ? false : true}
               >
                 assinar boletim
@@ -179,21 +182,9 @@ export default function Footer() {
                 </Typography>
               </Link>
             </Box>
-          </Box>
+          </Layout.inputContainer>
 
-          {/* <Box mt={{ xs: 5, sm: 0 }}>
-            <Typography fontFamily="Fira Sans" color="white">
-              FALE CONOSCO
-            </Typography>
-            <Typography fontFamily="Open Sans" color="white">
-              contato@amazilia.org.br
-            </Typography>
-            <Typography fontFamily="Open Sans" color="white">
-              ouvidoria@amazilia.org.br
-            </Typography>
-          </Box> */}
-
-          <Box mt={{ xs: 5, sm: 0 }} pr="6rem">
+          <Box minWidth="250px" paddingLeft="1rem">
             <Typography variant="button" fontFamily="Fira Sans" color="white">
               Contribua com O amazilia
             </Typography>
@@ -202,17 +193,33 @@ export default function Footer() {
               Agência: 0151 <br />
               Conta corrente: 14.773-3 <br />
               CNPJ: 37.389.697/0001-44 <br />
-              PIX: 37389697000144 <br />
+              <span>
+                PIX: 37389697000144{" "}
+                <IconButton
+                  style={{ color: "white" }}
+                  onClick={() => copyToClipboard("37389697000144")}
+                >
+                  <FileCopyIcon />
+                </IconButton>
+              </span>
             </Typography>
           </Box>
-        </Box>
+        </Layout.newsLetterContainer>
+
         <Divider
           flexItem
           orientation="horizontal"
           color="#FBFBFB"
           sx={{ marginBottom: "2rem", marginTop: "2rem" }}
         />
-        <Box maxWidth="70%" pb="6rem">
+        <Feedback
+          key={uuidv4()}
+          msg={msg}
+          severity={severity}
+          open={open}
+          setOpen={setOpen}
+        />
+        <Box sx={{ maxWidth: { xs: "100%", md: "70%" } }} pb="6rem">
           <Typography variant="caption" color="#ECEDEE">
             A Associação Amazilia é isenta do recolhimento de ITCMD (Imposto
             sobre Transmissão “Causa Mortis” e Doação de Quaisquer Bens ou
@@ -228,7 +235,13 @@ export default function Footer() {
           color="#FBFBFB"
         />
         <Box
-          flexDirection="row"
+          sx={{
+            flexDirection: { xs: "column", md: "row" },
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: "1rem",
+          }}
           display="flex"
           width="100%"
           justifyContent="space-between"
@@ -283,14 +296,7 @@ export default function Footer() {
             </IconButton>
           </Box>
         </Box>
-      </Box>
-      <Feedback
-        key={uuidv4()}
-        msg={msg}
-        severity={severity}
-        open={open}
-        setOpen={setOpen}
-      />
+      </Layout.section>
     </>
   );
 }

@@ -18,7 +18,7 @@ export default function Form() {
 
   const handleSubmit = async (event: { preventDefault: () => void }) => {
     event.preventDefault();
-    const apiKey = import.meta.env.VITE_SENDINBLUE_APIKEY;
+    const apiKey = import.meta.env.VITE_SENDINBLUE_API_KEY;
     try {
       const response = await axios
         .post(
@@ -41,9 +41,11 @@ export default function Form() {
           setSeverity("success");
           setMsg("Obrigado pelo interesse! Recebemos sua resposta. ❤️");
         })
-        .catch(() => {
+        .catch((error) => {
           setOpen(true);
           setSeverity("error");
+
+          // duplicate_parameter precisa criar a excessao do email ja existir nos contatos
           setMsg(
             "Erro inesperado, por favor entre em contato com nosso suporte"
           );
@@ -91,7 +93,9 @@ export default function Form() {
             minWidth: { xs: "auto", md: "418px" },
           }}
           multiline
+          value={message}
           rows={4}
+          onChange={(event) => setMessage(event.target.value)}
           placeholder="Deixe sua mensagem"
         ></Layout.input>
         <Button

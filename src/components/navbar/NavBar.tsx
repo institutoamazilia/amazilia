@@ -34,7 +34,7 @@ function NavBar() {
   };
 
   return (
-    <AppBar id="appbar">
+    <AppBar id="appbar" className="animate__animated animate__slideInDown">
       <Container maxWidth="xl" style={{ paddingLeft: "10%" }}>
         <Toolbar disableGutters>
           <Button href={"#Home"}>

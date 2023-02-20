@@ -14,7 +14,7 @@ export default function Supporters() {
       </Typography>
       <Layout.supportersContainer>
         {data.images.map((item, index) => (
-          <Box>
+          <Box key={uuidv4()}>
             <img
               key={uuidv4()}
               src={item}
