@@ -3,13 +3,14 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { data } from "./data";
 import { v4 as uuidv4 } from "uuid";
+import COLORS from "../layout/colors";
 
 export default function Results() {
   return (
     <>
-      <Box id="results" sx={{ padding: { xs: "2rem", sm: "6rem" } }}>
+      <Box id="results" sx={{ padding: { xs: "2rem", md: "6rem" } }}>
         <Box>
-          <Typography fontFamily="Fira Sans" color="#522D6D" fontSize="40px">
+          <Typography variant="h2" color={COLORS.primary} fontWeight="600">
             {data.title}
           </Typography>
           <Typography fontFamily="Open Sans" color="#260441">
@@ -31,8 +32,8 @@ export default function Results() {
               >
                 <Typography
                   key={uuidv4()}
-                  color="#522D6D"
-                  fontFamily="Fira Sans"
+                  color={COLORS.primaryDark}
+                  variant="h5"
                 >
                   {item.title}
                 </Typography>
@@ -60,7 +61,7 @@ export default function Results() {
                         color="#E08C27"
                         fontFamily="Fira Sans"
                         fontWeight="400"
-                        fontSize="96px"
+                        sx={{ fontSize: { xs: "60px", md: "96px" } }}
                       >
                         {i.value}
                       </Typography>
@@ -70,9 +71,9 @@ export default function Results() {
                           width: { xs: "80%", sm: "70%" },
                           textAlign: { xs: "center", sm: "start" },
                         }}
-                        fontFamily="Fira Sans"
-                        fontSize="28px"
-                        color="#522D6D"
+                        variant="h3"
+                        color={COLORS.primaryDark}
+                        fontWeight="600"
                       >
                         {" "}
                         {i.title}

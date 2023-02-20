@@ -2,21 +2,12 @@ import React from "react";
 import { Box, Container, Typography } from "@mui/material";
 import { data } from "./data";
 import { v4 as uuidv4 } from "uuid";
+import * as Layout from "./Contribution.styles";
+
 export default function Contribution() {
   return (
-    <Box
-      id="Contribution"
-      sx={{
-        display: "flex",
-        flexDirection: { xs: "column-reverse", sm: "row" },
-        bgcolor: "#ECEDEE",
-        paddingLeft: { xs: "1rem", sm: "6rem" },
-        paddingTop: "2rem",
-        paddingBottom: "2rem",
-        gap: "4rem",
-      }}
-    >
-      <Box>
+    <Layout.section id="Contribution">
+      <Layout.aside>
         <Typography fontSize="28px" color="#522D6D" fontFamily="Fira Sans">
           {data.title}
         </Typography>
@@ -28,10 +19,10 @@ export default function Contribution() {
             <img key={uuidv4()} style={{ marginRight: ".4rem" }} src={item} />
           ))}
         </Box>
+      </Layout.aside>
+      <Box sx={{ width: "100%", height: "100%" }}>
+        <Layout.image src={data.onuImage} />
       </Box>
-      <Container>
-        <img src={data.onuImage} />
-      </Container>
-    </Box>
+    </Layout.section>
   );
 }
