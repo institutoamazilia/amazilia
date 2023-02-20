@@ -9,7 +9,12 @@ export default function Supporters() {
   return (
     <Layout.section id="Apoiadores">
       {/*------------- section 1 -------------*/}
-      <Typography variant="h3" fontWeight="600" color={COLORS.primaryDark}>
+      <Typography
+        sx={{ padding: { xs: "2rem", md: "0" } }}
+        variant="h3"
+        fontWeight="600"
+        color={COLORS.primaryDark}
+      >
         {data.title}
       </Typography>
       <Layout.supportersContainer>
@@ -30,6 +35,7 @@ export default function Supporters() {
         fontWeight="600"
         color={COLORS.primaryDark}
         mt="6rem"
+        sx={{ padding: { xs: "2rem", md: "0" } }}
       >
         {data.title2}
       </Typography>
@@ -42,7 +48,7 @@ export default function Supporters() {
         variant="h3"
         fontWeight="600"
         color={COLORS.primaryDark}
-        sx={{ paddingTop: "4rem", padding: { xs: "2rem" } }}
+        sx={{ paddingTop: "4rem", padding: { xs: "2rem", md: "0" } }}
       >
         {data.title3}
       </Typography>
@@ -54,14 +60,33 @@ export default function Supporters() {
           flexDirection: "row",
         }}
       >
-        <Layout.teamContainer>
+        <Layout.teamContainer sx={{ paddingLeft: { sm: "2rem", md: 0 } }}>
           {data.images3.map((item, index) => (
             <Layout.teamItem key={uuidv4()}>
-              <img key={uuidv4()} src={item.img} />
-              <Typography key={uuidv4()} fontFamily="Fira Sans" color="#522D6D">
+              <Box>
+                <img
+                  key={uuidv4()}
+                  src={item.img}
+                  style={{
+                    objectFit: "contain",
+                    width: "100%",
+                  }}
+                />
+              </Box>
+              <Typography
+                key={uuidv4()}
+                variant="h4"
+                minWidth="150px"
+                color="#522D6D"
+              >
                 {item.title}
               </Typography>
-              <Typography key={uuidv4()} fontFamily="Fira Sans" color="#B06C18">
+              <Typography
+                key={uuidv4()}
+                variant="h5"
+                fontWeight={600}
+                color="#B06C18"
+              >
                 {item.responsibility}
               </Typography>
             </Layout.teamItem>

@@ -7,7 +7,7 @@ const section = styled(Box)(({ theme }) => ({
   paddingBottom: "4rem",
   height: "100%",
   [theme.breakpoints.down("md")]: {
-    padding: "0px",
+    padding: "0",
   },
 }));
 
@@ -40,7 +40,7 @@ const teamItem = styled(Box)(({ theme }) => ({
 
 const teamContainer = styled(Box)(({ theme }) => ({
   width: "100%",
-  height: 400,
+  height: "auto",
   flexDirection: "row",
   display: "flex",
   alignItems: "start",
