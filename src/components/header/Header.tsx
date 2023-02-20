@@ -4,7 +4,7 @@ import * as Layout from "../../components/header/Header.styles";
 import COLORS from "../layout/colors";
 export default function Header() {
   return (
-    <Layout.pageContainer bgcolor="#522D6D">
+    <Layout.pageContainer id="Home" bgcolor="#522D6D">
       <Layout.grid>
         <Layout.titleContainer>
           <Typography

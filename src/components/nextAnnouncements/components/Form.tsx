@@ -88,7 +88,7 @@ export default function Form() {
             bgcolor: "white",
             borderRadius: "6px",
             color: "#160226",
-            minWidth: "418px",
+            minWidth: { xs: "auto", md: "418px" },
           }}
           multiline
           rows={4}

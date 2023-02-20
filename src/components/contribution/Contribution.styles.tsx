@@ -10,7 +10,6 @@ const section = styled(Box)(({ theme }) => ({
   paddingBottom: "3rem",
   width: "100%",
   gap: "4rem",
-  minWidth: "450px",
   [theme.breakpoints.down(1190)]: {
     flexDirection: "column-reverse",
   },

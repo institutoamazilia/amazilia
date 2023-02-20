@@ -2,47 +2,33 @@ import { Box, Typography } from "@mui/material";
 import React from "react";
 import { data } from "./data";
 import { v4 as uuidv4 } from "uuid";
+import COLORS from "../layout/colors";
+import * as Layout from "./Supporters.styles";
 
 export default function Supporters() {
   return (
-    <Box
-      id="Apoiadores"
-      sx={{
-        paddingLeft: { xs: "1rem", sm: "6rem" },
-        paddingTop: "4rem",
-        paddingBottom: "4rem",
-      }}
-    >
+    <Layout.section id="Apoiadores">
       {/*------------- section 1 -------------*/}
-      <Typography
-        fontFamily="Fira Sans"
-        fontSize="28px"
-        sx={{ color: "#260441" }}
-      >
+      <Typography variant="h3" fontWeight="600" color={COLORS.primaryDark}>
         {data.title}
       </Typography>
-      <Box
-        sx={{
-          marginTop: "2rem",
-          marginBottom: "2rem",
-          gap: { xs: "1rem", sm: "6rem" },
-        }}
-      >
+      <Layout.supportersContainer>
         {data.images.map((item, index) => (
-          <img
-            key={uuidv4()}
-            src={item}
-            loading="lazy"
-            style={{ paddingTop: "1rem" }}
-          />
+          <Box>
+            <img
+              key={uuidv4()}
+              src={item}
+              style={{ paddingTop: "1rem", objectFit: "contain" }}
+            />
+          </Box>
         ))}
-      </Box>
+      </Layout.supportersContainer>
       {/*------------- section 2 ------------- */}
 
       <Typography
-        fontFamily="Fira Sans"
-        fontSize="28px"
-        sx={{ color: "#260441" }}
+        variant="h3"
+        fontWeight="600"
+        color={COLORS.primaryDark}
         mt="6rem"
       >
         {data.title2}
@@ -53,9 +39,10 @@ export default function Supporters() {
       {/* ------------- section 3 -------------*/}
 
       <Typography
-        fontFamily="Fira Sans"
-        fontSize="28px"
-        sx={{ color: "#260441", paddingTop: "4rem" }}
+        variant="h3"
+        fontWeight="600"
+        color={COLORS.primaryDark}
+        sx={{ paddingTop: "4rem", padding: { xs: "2rem" } }}
       >
         {data.title3}
       </Typography>
@@ -67,18 +54,9 @@ export default function Supporters() {
           flexDirection: "row",
         }}
       >
-        <Box
-          sx={{
-            overflowX: { xs: "scroll", sm: "hidden" },
-            width: "100%",
-            height: 400,
-            flexDirection: "row",
-            display: "flex",
-            alignItems: "start",
-          }}
-        >
+        <Layout.teamContainer>
           {data.images3.map((item, index) => (
-            <Box key={uuidv4()} sx={{ diplay: "flex", textAlign: "center" }}>
+            <Layout.teamItem key={uuidv4()}>
               <img key={uuidv4()} src={item.img} />
               <Typography key={uuidv4()} fontFamily="Fira Sans" color="#522D6D">
                 {item.title}
@@ -86,10 +64,10 @@ export default function Supporters() {
               <Typography key={uuidv4()} fontFamily="Fira Sans" color="#B06C18">
                 {item.responsibility}
               </Typography>
-            </Box>
+            </Layout.teamItem>
           ))}
-        </Box>
+        </Layout.teamContainer>
       </Box>
-    </Box>
+    </Layout.section>
   );
 }

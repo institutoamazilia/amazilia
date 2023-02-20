@@ -3,15 +3,21 @@ import { Box, Container, Typography } from "@mui/material";
 import { data } from "./data";
 import { v4 as uuidv4 } from "uuid";
 import * as Layout from "./Contribution.styles";
+import COLORS from "../layout/colors";
 
 export default function Contribution() {
   return (
     <Layout.section id="Contribution">
       <Layout.aside>
-        <Typography fontSize="28px" color="#522D6D" fontFamily="Fira Sans">
+        <Typography color={COLORS.primaryDark} variant="h3" fontWeight="600">
           {data.title}
         </Typography>
-        <Typography sx={{ maxWidth: { xs: "100%", sm: "60%" } }} my="1.4rem">
+        <Typography
+          variant="body1"
+          sx={{ maxWidth: { xs: "100%", sm: "60%" } }}
+          my="1.4rem"
+          color={COLORS.Neutral.dark}
+        >
           {data.subt}
         </Typography>
         <Box>
