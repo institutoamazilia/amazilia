@@ -33,14 +33,6 @@ const floatingButton = styled(Box)(({ theme }) => ({
 }));
 
 const backHomeButton = styled(IconButton)(({ theme }) => ({
-  border: "2px solid white",
-  width: "40px",
-  height: "40px",
-  borderRadius: "50%",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  color: "white",
   [theme.breakpoints.down("md")]: {},
 }));
 
