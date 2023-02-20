@@ -1,6 +1,10 @@
 const COLORS = {
   primary: "#522D6D",
   primaryDark: "#260441",
+  Neutral: {
+    dark: "#181D27",
+    lightGrey3: "#FBFBFB",
+  },
 
   green: "#637D3B",
   greenLight: "#496522",
