@@ -97,9 +97,21 @@ export default function Footer() {
     <>
       <Layout.section id="footer">
         <Layout.floatingButton>
-          <Layout.backHomeButton href="#Home">
+          <IconButton
+            sx={{
+              border: "2px solid white",
+              width: "40px",
+              height: "40px",
+              borderRadius: "50%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              color: "white",
+            }}
+            href="#Home"
+          >
             <NorthIcon />
-          </Layout.backHomeButton>
+          </IconButton>
         </Layout.floatingButton>
         <Layout.newsLetterContainer>
           <Layout.inputContainer>
