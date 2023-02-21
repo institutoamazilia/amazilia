@@ -67,6 +67,7 @@ const cardContainer = styled(Box)(({ theme }) => ({
   alignItems: "start",
   flexWrap: "wrap",
   boxSizing: "content-box",
+  gap: "1rem",
   justifyContent: "space-between",
   [theme.breakpoints.down("sm")]: {
     height: "100%",

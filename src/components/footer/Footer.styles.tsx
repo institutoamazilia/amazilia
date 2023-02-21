@@ -17,7 +17,7 @@ const section = styled(Box)(({ theme }) => ({
 
   flexDirection: "column",
   [theme.breakpoints.down("md")]: {
-    padding: "2rem",
+    padding: "1.5rem",
   },
 }));
 
