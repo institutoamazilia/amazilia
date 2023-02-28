@@ -184,9 +184,9 @@ export default function Footer() {
                 inputProps={{ "aria-label": "controlled" }}
               />
               <Link
+                style={{ color: "white" }}
+                to="/politica-de-privacidade"
                 color="white"
-                underline="hover"
-                href="https://drive.google.com/file/d/1l0Kka0BC4UIv2TLBbVpeIQZNzkFbxiRE/view?usp=sharing"
                 target="_blank"
               >
                 <Typography ml={1} variant="body1">
@@ -222,7 +222,7 @@ export default function Footer() {
           flexItem
           orientation="horizontal"
           color="#FBFBFB"
-          sx={{ marginBottom: "2rem", marginTop: "2rem" }}
+          sx={{ marginBottom: "1rem", marginTop: "1rem" }}
         />
         <Feedback
           key={uuidv4()}
@@ -231,7 +231,7 @@ export default function Footer() {
           open={open}
           setOpen={setOpen}
         />
-        <Box sx={{ maxWidth: { xs: "100%", md: "70%" } }} pb="6rem">
+        <Box sx={{ maxWidth: "100%" }}>
           <Typography variant="caption" color="#ECEDEE">
             A Associação Amazilia é isenta do recolhimento de ITCMD (Imposto
             sobre Transmissão “Causa Mortis” e Doação de Quaisquer Bens ou
@@ -243,7 +243,7 @@ export default function Footer() {
         <Divider
           flexItem
           orientation="horizontal"
-          sx={{ marginBottom: "2rem", marginTop: "2rem" }}
+          sx={{ marginBottom: "1rem", marginTop: "1rem" }}
           color="#FBFBFB"
         />
         <Box
