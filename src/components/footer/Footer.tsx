@@ -200,7 +200,7 @@ export default function Footer() {
             <Typography variant="button" fontFamily="Fira Sans" color="white">
               Contribua com O amazilia
             </Typography>
-            <Typography fontFamily="Open Sans" color="white">
+            <Typography fontSize="15px" fontFamily="Open Sans" color="white">
               Banco Itaú (341) <br />
               Agência: 0151 <br />
               Conta corrente: 14.773-3 <br />
