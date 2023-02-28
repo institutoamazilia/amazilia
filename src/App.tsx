@@ -3,12 +3,14 @@ import { CssBaseline } from "@mui/material";
 import Home from "./pages/home/Home";
 import { responsiveTheme } from "./styles/globalStyles";
 import "animate.css";
+import { RouterProvider } from "react-router-dom";
+import browserRouter from "./router/Routes";
 
 function App() {
   return (
     <>
       <ThemeProvider theme={responsiveTheme}>
-        <Home />
+        <RouterProvider router={browserRouter} />
       </ThemeProvider>
     </>
   );

@@ -3,7 +3,7 @@ import Button from "@mui/material/Button/Button";
 import Checkbox from "@mui/material/Checkbox/Checkbox";
 import Feedback from "../feedback/Feedback";
 import FormControl from "@mui/material/FormControl/FormControl";
-import Link from "@mui/material/Link";
+// import Link from "@mui/material/Link";
 import Logo from "../../assets/logo.png";
 import React, { useState } from "react";
 import TextField from "@mui/material/TextField/TextField";
@@ -16,7 +16,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import * as Layout from "./Footer.styles";
 import FileCopyIcon from "@mui/icons-material/FileCopy";
 import COLORS from "../layout/colors";
-
+import { Link } from "react-router-dom";
 export default function Footer() {
   const [email, setEmail] = useState("");
   const apiKey = import.meta.env.VITE_SENDINBLUE_API_KEY;
@@ -261,22 +261,12 @@ export default function Footer() {
           <Box>
             <img src={Logo} />
           </Box>
-          <Link
-            color="white"
-            underline="hover"
-            href="https://drive.google.com/file/d/1l0Kka0BC4UIv2TLBbVpeIQZNzkFbxiRE/view?usp=sharing"
-            target="_blank"
-          >
+          <Link to="/politica-de-privacidade" color="white" target="_blank">
             <Typography ml={1} variant="button">
               Política de Privacidade
             </Typography>
           </Link>
-          <Link
-            color="white"
-            underline="hover"
-            href="https://drive.google.com/file/d/1l0Kka0BC4UIv2TLBbVpeIQZNzkFbxiRE/view?usp=sharing"
-            target="_blank"
-          >
+          <Link to="/politica-de-privacidade" color="white" target="_blank">
             <Typography ml={1} variant="button">
               Política de cookies
             </Typography>
