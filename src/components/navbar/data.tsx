@@ -1,7 +1,8 @@
 export const links = [
-    "Home",
-    "O que fazemos",
-    "Próximos Editais",
-    "Depoimentos",
-    "Apoiadores",
-  ];
+	'Quem somos',
+	'Impacto',
+	'Fortalecimento de OSC',
+	'Apoiar',
+	'Voluntariado',
+	'Contato',
+];
