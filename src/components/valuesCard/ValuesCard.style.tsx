@@ -30,6 +30,7 @@ const containerCardList = styled(Box)(({ theme }) => ({
 
 const containerCard = styled(Card)(({ theme }) => ({
 	position: 'relative',
+	borderRadius: 0,
 }));
 
 const itemsCard = styled(CardContent)(({ theme }) => ({

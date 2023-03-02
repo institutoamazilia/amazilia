@@ -12,7 +12,7 @@ const browserRouter = createBrowserRouter([
 		element: <PrivacyPolicy />,
 	},
 	{
-		path: '/sobre',
+		path: '/about',
 		element: <About />,
 	},
 ]);

@@ -10,7 +10,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Logo from '../../assets/logo.png';
 import { v4 as uuidv4 } from 'uuid';
-import { links } from './data';
+import { Links } from './data';
 import * as Layout from './NavBar.styles';
 
 function NavBar() {
@@ -38,7 +38,7 @@ function NavBar() {
 		<AppBar id='appbar' className='animate__animated animate__slideInDown'>
 			<Container maxWidth='xl' style={{ paddingLeft: '10%' }}>
 				<Toolbar disableGutters>
-					<Button href={'#Home'}>
+					<Button href='/'>
 						<img src={Logo} alt='logo' />
 					</Button>
 					<Box
@@ -76,17 +76,17 @@ function NavBar() {
 								display: { xs: 'block', lg: 'none' },
 							}}
 						>
-							{links.map(page => (
+							{Links.map(page => (
 								<MenuItem
 									key={uuidv4()}
 									onClick={handleCloseNavMenu}
 								>
 									<Button
-										key={page}
+										key={page.text}
 										onClick={handleCloseNavMenu}
-										href={`#${page}`}
+										href={page.link}
 									>
-										{page}
+										{page.text}
 									</Button>
 								</MenuItem>
 							))}
@@ -104,9 +104,9 @@ function NavBar() {
 							display: { xs: 'none', lg: 'flex' },
 						}}
 					>
-						{links.map(page => (
+						{Links.map(page => (
 							<Button
-								key={page}
+								key={page.text}
 								onClick={handleCloseNavMenu}
 								sx={{
 									my: 2,
@@ -114,9 +114,9 @@ function NavBar() {
 									display: 'block',
 									paddingLeft: '2rem',
 								}}
-								href={`#${page}`}
+								href={page.link}
 							>
-								{page}
+								{page.text}
 							</Button>
 						))}
 						<Layout.donateButton
