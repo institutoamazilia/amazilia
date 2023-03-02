@@ -1,4 +1,4 @@
-import image from '../../assets/hearder-sobre-background.png';
+import image from '../../assets/about/header-about-background.png';
 
 interface header {
 	title: string;

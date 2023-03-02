@@ -10,6 +10,10 @@ const containerAboutUs = styled(Box)(({ theme }) => ({
 	paddingRight: '6rem',
 	paddingTop: '4rem',
 	paddingBottom: '4rem',
+	[theme.breakpoints.down('sm')]: {
+		paddingLeft: '2rem',
+		paddingRight: '2rem',
+	},
 }));
 
 const mainTitle = styled(Typography)(({ theme }) => ({
