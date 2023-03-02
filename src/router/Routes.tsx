@@ -1,7 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 import PrivacyPolicy from '../components/PrivacyPolicy';
 import Home from '../pages/home/Home';
-import Sobre from '../pages/sobre/Sobre';
+import About from '../pages/about/About';
 const browserRouter = createBrowserRouter([
 	{
 		path: '/',
@@ -13,7 +13,7 @@ const browserRouter = createBrowserRouter([
 	},
 	{
 		path: '/sobre',
-		element: <Sobre />,
+		element: <About />,
 	},
 ]);
 

@@ -11,6 +11,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Logo from '../../assets/logo.png';
 import { v4 as uuidv4 } from 'uuid';
 import { links } from './data';
+import * as Layout from './NavBar.styles';
 
 function NavBar() {
 	const [anchorElNav, setAnchorElNav] =
@@ -43,7 +44,7 @@ function NavBar() {
 					<Box
 						sx={{
 							flexGrow: 1,
-							display: { xs: 'flex', md: 'none' },
+							display: { xs: 'flex', lg: 'none' },
 							justifyContent: 'flex-end',
 						}}
 					>
@@ -72,7 +73,7 @@ function NavBar() {
 							open={Boolean(anchorElNav)}
 							onClose={handleCloseNavMenu}
 							sx={{
-								display: { xs: 'block', md: 'none' },
+								display: { xs: 'block', lg: 'none' },
 							}}
 						>
 							{links.map(page => (
@@ -89,12 +90,18 @@ function NavBar() {
 									</Button>
 								</MenuItem>
 							))}
+							<Layout.donateButtonMenu
+								variant='contained'
+								color='secondary'
+							>
+								DOE AGORA
+							</Layout.donateButtonMenu>
 						</Menu>
 					</Box>
 					<Box
 						sx={{
 							flexGrow: 1,
-							display: { xs: 'none', md: 'flex' },
+							display: { xs: 'none', lg: 'flex' },
 						}}
 					>
 						{links.map(page => (
@@ -112,16 +119,13 @@ function NavBar() {
 								{page}
 							</Button>
 						))}
+						<Layout.donateButton
+							variant='contained'
+							color='secondary'
+						>
+							DOE AGORA
+						</Layout.donateButton>
 					</Box>
-					<Button
-						variant='contained'
-						color='secondary'
-						sx={{
-							color: 'white',
-						}}
-					>
-						DOE AGORA
-					</Button>
 				</Toolbar>
 			</Container>
 		</AppBar>
