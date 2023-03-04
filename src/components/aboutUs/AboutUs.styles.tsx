@@ -8,11 +8,14 @@ const containerAboutUs = styled(Box)(({ theme }) => ({
 	display: 'flex',
 	paddingLeft: '6rem',
 	paddingRight: '6rem',
-	paddingTop: '4rem',
 	paddingBottom: '4rem',
+	marginTop: '5.125rem',
 	[theme.breakpoints.down('sm')]: {
 		paddingLeft: '2rem',
 		paddingRight: '2rem',
+	},
+	[theme.breakpoints.down(1690)]: {
+		paddingTop: 0,
 	},
 }));
 

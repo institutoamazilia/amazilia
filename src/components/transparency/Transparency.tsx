@@ -10,11 +10,11 @@ export default function Transparency() {
 			<Layout.image src={bgImage} />
 			<Layout.mainContainer>
 				<Grid container spacing={6}>
-					<Grid item sm={6}>
+					<Grid item lg={6} xs={12}>
 						<Layout.mainTitle>{mainText.title}</Layout.mainTitle>
 						<Layout.mainText>{mainText.text}</Layout.mainText>
 					</Grid>
-					<Grid item sm={3}>
+					<Grid item lg={3} xs={12}>
 						<Layout.sectionTitle>
 							{Reports.title}
 						</Layout.sectionTitle>
@@ -27,7 +27,7 @@ export default function Transparency() {
 							</Layout.fileButton>
 						</Layout.containerFile>
 					</Grid>
-					<Grid item sm={3}>
+					<Grid item lg={3} xs={12}>
 						<Layout.sectionTitle>
 							{Ethics.title}
 						</Layout.sectionTitle>
@@ -56,7 +56,7 @@ export default function Transparency() {
 				<Grid container spacing={4}>
 					{WhatWeDid.map(data => {
 						return (
-							<Grid item>
+							<Grid item lg={3} xs={12}>
 								<Layout.containerWhatWeDid>
 									<Layout.bottomNumber>
 										{data.number}

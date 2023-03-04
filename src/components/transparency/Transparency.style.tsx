@@ -18,6 +18,13 @@ const mainContainer = styled(Box)(({ theme }) => ({
 const image = styled('img')(({ theme }) => ({
 	width: '100%',
 	height: '41.25rem',
+
+	[theme.breakpoints.down(1200)]: {
+		height: '50rem',
+	},
+	[theme.breakpoints.down(680)]: {
+		height: '80rem',
+	},
 }));
 
 const mainTitle = styled(Typography)(({ theme }) => ({
@@ -43,11 +50,19 @@ const sectionTitle = styled(Typography)(({ theme }) => ({
 	fontWeight: 'bold',
 	lineHeight: '150%',
 	paddingBottom: '1.651rem',
+	[theme.breakpoints.down(1200)]: {
+		position: 'relative',
+		top: '-8rem',
+	},
 }));
 
 const containerFile = styled(Box)(({ theme }) => ({
 	display: 'flex',
 	flexDirection: 'column',
+	[theme.breakpoints.down(1200)]: {
+		position: 'relative',
+		top: '-8rem',
+	},
 }));
 
 const fileButton = styled(Button)(({ theme }) => ({
@@ -59,12 +74,29 @@ const fileButton = styled(Button)(({ theme }) => ({
 	'&:hover': {
 		backgroundColor: 'white',
 	},
+	[theme.breakpoints.down(1245)]: {
+		minWidth: '16.5rem',
+		justifyContent: 'flex-start',
+	},
+	[theme.breakpoints.down(1200)]: {
+		minWidth: 'fit-content',
+		justifyContent: 'flex-start',
+	},
 }));
 
 const containerWhatWeDid = styled(Box)(({ theme }) => ({
 	display: 'flex',
 	flexDirection: 'column',
 	width: '16.75rem',
+	[theme.breakpoints.down(1200)]: {
+		position: 'relative',
+		top: '-30rem',
+		left: '50%',
+	},
+	[theme.breakpoints.down(680)]: {
+		top: '-5rem',
+		left: 0,
+	},
 }));
 
 const bottomNumber = styled(Typography)(({ theme }) => ({
