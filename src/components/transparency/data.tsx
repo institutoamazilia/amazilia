@@ -33,7 +33,7 @@ const mainText: IMain = {
 const Reports: IReports = {
 	title: 'Relatórios',
 	fileName: 'Relatório anual 2020',
-	fileLink: 'link',
+	fileLink: '',
 };
 
 const Ethics: IEthics = {
@@ -41,9 +41,9 @@ const Ethics: IEthics = {
 	fileName1: 'estatuto social',
 	fileName2: 'CÓDIGO DE ÉTICA E CONDUTA',
 	fileName3: 'organograma',
-	fileLink1: 'link',
-	fileLink2: 'link',
-	fileLink3: 'link',
+	fileLink1: '',
+	fileLink2: '',
+	fileLink3: '',
 };
 
 const WhatWeDid: IWhatWeDid[] = [

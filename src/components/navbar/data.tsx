@@ -10,7 +10,7 @@ export const Links: ILinks[] = [
 	},
 	{
 		text: 'Impacto',
-		link: '/',
+		link: '/impact',
 	},
 	{
 		text: 'Fortalecimento de OSC',

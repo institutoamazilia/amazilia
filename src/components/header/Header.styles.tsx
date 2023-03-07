@@ -6,6 +6,7 @@ import headerImage from '../../assets/hearder-background.png';
 
 const pageContainer = styled(Box)(({ theme }) => ({
 	display: 'flex',
+	width: '100%',
 	height: '700px',
 	position: 'relative',
 	[theme.breakpoints.down('md')]: {
