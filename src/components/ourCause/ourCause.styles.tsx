@@ -27,10 +27,12 @@ const sectionTitle = styled(Typography)(({ theme }) => ({
 	fontWeight: 'bold',
 	maxWidth: '55rem',
 	marginTop: '2rem',
+	wordBreak: 'break-word',
 }));
 
 const sectionCardsContainer = styled(Box)(({ theme }) => ({
 	display: 'flex',
+	flexWrap: 'wrap',
 	justifyContent: 'space-between',
 	marginTop: '3.25rem',
 }));

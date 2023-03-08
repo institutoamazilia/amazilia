@@ -1,8 +1,5 @@
 import { styled } from '@mui/material/styles';
 import { Box, Grid } from '@mui/material';
-import Typography from '@mui/material/Typography/Typography';
-import COLORS from '../layout/colors';
-import headerImage from '../../assets/hearder-background.png';
 
 const pageContainer = styled(Box)(({ theme }) => ({
 	display: 'flex',

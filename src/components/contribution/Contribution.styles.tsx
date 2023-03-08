@@ -1,34 +1,36 @@
-import { styled } from "@mui/material/styles";
-import { Box } from "@mui/material";
+import { styled } from '@mui/material/styles';
+import { Box, Typography } from '@mui/material';
 
 const section = styled(Box)(({ theme }) => ({
-  display: "flex",
-  flexDirection: "row",
-  backgroundColor: "#ECEDEE",
-  paddingLeft: "6rem",
-  paddingTop: "3rem",
-  paddingBottom: "3rem",
-  width: "100%",
-  gap: "4rem",
-  [theme.breakpoints.down(1190)]: {
-    flexDirection: "column-reverse",
-  },
-  [theme.breakpoints.down("sm")]: {
-    paddingLeft: "2rem",
-  },
+	display: 'flex',
+	flexDirection: 'row',
+	backgroundColor: '#ECEDEE',
+	paddingLeft: '6rem',
+	paddingTop: '3rem',
+	paddingBottom: '3rem',
+	width: '100%',
+	gap: '4rem',
+	[theme.breakpoints.down(1190)]: {
+		flexDirection: 'column-reverse',
+	},
+	[theme.breakpoints.down('sm')]: {
+		paddingLeft: '2rem',
+	},
 }));
 
 const aside = styled(Box)(({ theme }) => ({
-  width: "100%",
+	width: '100%',
 }));
 
-const image = styled("img")(({ theme }) => ({
-  objectFit: "contain",
+const image = styled('img')(({ theme }) => ({
+	objectFit: 'contain',
 
-  [theme.breakpoints.down("md")]: {
-    maxWidth: "300px",
-    height: "auto",
-  },
+	[theme.breakpoints.down('md')]: {
+		maxWidth: '300px',
+		height: 'auto',
+	},
 }));
+
+//Contribution Impact Page
 
 export { section, aside, image };
