@@ -13,10 +13,13 @@ import NorthIcon from '@mui/icons-material/North';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import TwitterIcon from '@mui/icons-material/Twitter';
 import * as Layout from './Footer.styles';
 import FileCopyIcon from '@mui/icons-material/FileCopy';
 import COLORS from '../layout/colors';
 import { Link } from 'react-router-dom';
+import { FooterRedirects, ellipseFooter, MIcon } from './data';
+
 export default function Footer() {
 	const [email, setEmail] = useState('');
 	const apiKey = import.meta.env.VITE_SENDINBLUE_API_KEY;
@@ -166,17 +169,13 @@ export default function Footer() {
 								required
 								placeholder='Seu e-mail'
 							/>
-							<Button
+							<Layout.buttonReport
 								type='submit'
 								variant='contained'
-								sx={{
-									width: { xs: '100%', sm: 'auto' },
-									minWidth: '150px',
-								}}
 								disabled={checked ? false : true}
 							>
 								assinar boletim
-							</Button>
+							</Layout.buttonReport>
 						</FormControl>
 
 						<Box
@@ -251,16 +250,46 @@ export default function Footer() {
 					open={open}
 					setOpen={setOpen}
 				/>
-				<Box sx={{ maxWidth: '100%' }}>
-					<Typography variant='caption' color='#ECEDEE'>
-						A Associação Amazilia é isenta do recolhimento de ITCMD
-						(Imposto sobre Transmissão “Causa Mortis” e Doação de
-						Quaisquer Bens ou Direitos), nos termos do § 2º do
-						artigo 6º da Lei 10.705/00, na redação da Lei 10.992/01,
-						e do § 1º do art. 6º e do artigo 9º do Decreto
-						46.655/02, com validade até 30/01/2026.
-					</Typography>
-				</Box>
+				{/* MEXER AQUI */}
+				<Layout.sectionFooterRedirects>
+					{FooterRedirects.map(item => {
+						return (
+							<Layout.footerRedirects>
+								<Layout.footerRedirectsTitle>
+									{item.title}
+								</Layout.footerRedirectsTitle>
+								<Layout.footerRedirectsTopics href={item.link1}>
+									{item.topic1}
+								</Layout.footerRedirectsTopics>
+								<Layout.footerRedirectsTopics href={item.link2}>
+									{item.topic2}
+								</Layout.footerRedirectsTopics>
+								{item.contact ? (
+									<Layout.footerRedirectsTopics
+										href={item.link3}
+										style={{ marginTop: '1.5rem' }}
+									>
+										{item.topic3}
+									</Layout.footerRedirectsTopics>
+								) : (
+									<Layout.footerRedirectsTopics
+										href={item.link3}
+									>
+										{item.topic3}
+									</Layout.footerRedirectsTopics>
+								)}
+								<Layout.footerRedirectsTopics href={item.link4}>
+									{item.topic4}
+								</Layout.footerRedirectsTopics>
+
+								<Layout.footerRedirectsTopics href={item.link5}>
+									{item.topic5}
+								</Layout.footerRedirectsTopics>
+							</Layout.footerRedirects>
+						);
+					})}
+				</Layout.sectionFooterRedirects>
+
 				<Divider
 					flexItem
 					orientation='horizontal'
@@ -286,23 +315,22 @@ export default function Footer() {
 						to='/politica-de-privacidade'
 						color='white'
 						target='_blank'
+						style={{
+							color: 'white',
+						}}
 					>
-						<Typography ml={1} variant='button'>
+						<Layout.bottomText ml={1} variant='button'>
 							Política de Privacidade
-						</Typography>
+						</Layout.bottomText>
 					</Link>
 					<Link
 						to='/politica-de-privacidade'
 						color='white'
 						target='_blank'
-					>
-						<Typography ml={1} variant='button'>
-							Política de cookies
-						</Typography>
-					</Link>
-					<Typography color='white'>
+					></Link>
+					<Layout.bottomText>
 						© 2021. Todos os direitos reservados.
-					</Typography>
+					</Layout.bottomText>
 					<Box display='flex' gap='1rem' paddingLeft='2rem'>
 						<IconButton
 							href='https://www.instagram.com/amazilia_instituto/'
@@ -312,7 +340,7 @@ export default function Footer() {
 							<InstagramIcon />
 						</IconButton>
 						<IconButton
-							href=''
+							href='https://wa.me/+5511953426418'
 							target='_blank'
 							sx={{ border: '2px solid white', color: 'white' }}
 						>
@@ -325,6 +353,13 @@ export default function Footer() {
 						>
 							<LinkedInIcon />
 						</IconButton>
+						{/* <IconButton
+							href='https://br.linkedin.com/company/instituto-amazilia'
+							target='_blank'
+							sx={{ border: '2px solid white', color: 'white' }}
+						>
+							<img src={MIcon} />
+						</IconButton> */}
 					</Box>
 				</Box>
 			</Layout.section>

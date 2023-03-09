@@ -1,5 +1,5 @@
 import { styled } from '@mui/material/styles';
-import { Box, Typography } from '@mui/material';
+import { Box, Button } from '@mui/material';
 
 const section = styled(Box)(({ theme }) => ({
 	padding: '6rem',
@@ -15,7 +15,6 @@ const supportersContainer = styled(Box)(({ theme }) => ({
 	width: '100%',
 	flexWrap: 'wrap',
 	gap: '6rem',
-
 	paddingRight: '2rem',
 	paddingTop: '2rem',
 	display: 'flex',
@@ -53,4 +52,19 @@ const teamImage = styled('img')(({ theme }) => ({
 	width: '21.5rem',
 	heigh: '21.25rem',
 }));
-export { section, supportersContainer, teamItem, teamContainer, teamImage };
+
+const meetTeam = styled(Button)(({ theme }) => ({
+	fontWeight: '800',
+	letterSpacing: '0.9%',
+	marginBottom: '2rem',
+	marginTop: '2rem',
+}));
+
+export {
+	section,
+	supportersContainer,
+	teamItem,
+	teamContainer,
+	teamImage,
+	meetTeam,
+};

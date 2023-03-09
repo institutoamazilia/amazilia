@@ -6,7 +6,7 @@ import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 
 export default function Transparency() {
 	return (
-		<Box sx={{ position: 'relative' }}>
+		<Box id='trasparency' sx={{ position: 'relative' }}>
 			<Layout.image src={bgImage} />
 			<Layout.mainContainer>
 				<Grid container spacing={6}>

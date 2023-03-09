@@ -13,7 +13,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { Links } from './data';
 import * as Layout from './NavBar.styles';
 
-function NavBar() {
+function NavBar(props: any) {
 	const [anchorElNav, setAnchorElNav] =
 		React.useState<null | HTMLElement>(null);
 	const [anchorElUser, setAnchorElUser] =
@@ -35,7 +35,13 @@ function NavBar() {
 	};
 
 	return (
-		<AppBar id='appbar' className='animate__animated animate__slideInDown'>
+		<AppBar
+			id='appbar'
+			className='animate__animated animate__slideInDown'
+			style={{
+				backgroundColor: props.color,
+			}}
+		>
 			<Container maxWidth='xl' style={{ paddingLeft: '10%' }}>
 				<Toolbar disableGutters>
 					<Button href='/'>

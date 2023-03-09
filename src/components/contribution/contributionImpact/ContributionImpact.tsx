@@ -1,7 +1,7 @@
 import * as Layout from './ContributionImpact.styles';
 import * as Layout2 from '../Contribution.styles';
 import { data } from '../data';
-import { Subtitle, images } from './data';
+import { Subtitle, Images, BottomLink } from './data';
 import { Box } from '@mui/material';
 
 export default function ContributionImpact() {
@@ -15,14 +15,32 @@ export default function ContributionImpact() {
 				</Layout.sectionSubtitle>
 				<Layout.onuImage src={data.onuImage} />
 			</Layout.sectionTop>
-			<Box>
-				{images.map((item, index) => (
-					<img
-						style={{ marginRight: '2rem', marginTop: '2.313rem' }}
-						src={item}
-					/>
+			<Layout.sectionImages>
+				{Images.map((item, index) => (
+					<Layout.boxImages>
+						<Layout.outro>
+							<img
+								style={{
+									marginRight: '2rem',
+									marginTop: '2.313rem',
+								}}
+								src={item.image}
+							/>
+						</Layout.outro>
+						<Layout.outro>
+							<Layout.imagesInfo>{item.info}</Layout.imagesInfo>
+						</Layout.outro>
+					</Layout.boxImages>
 				))}
-			</Box>
+			</Layout.sectionImages>
+			<Box
+				sx={{
+					display: 'flex',
+				}}
+			></Box>
+			<Layout.bottomLink href={BottomLink.link} target='_blank'>
+				{BottomLink.text}
+			</Layout.bottomLink>
 		</Layout.mainSection>
 	);
 }

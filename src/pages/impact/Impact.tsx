@@ -1,5 +1,3 @@
-import { ThemeProvider } from '@emotion/react';
-import { responsiveTheme } from '../../styles/impactStyles';
 import { dataHeader } from '../../components/header/dataImpact';
 import { CssBaseline } from '@mui/material';
 import NavBar from '../../components/navbar/NavBar';
@@ -10,21 +8,21 @@ import Reaches from '../../components/reaches/Reaches';
 import Footer from '../../components/footer/Footer';
 import TestimonyVideo from '../../components/testimonyVideo/TestimonyVideo';
 import ContributionImpact from '../../components/contribution/contributionImpact/ContributionImpact';
+import WhatAndHow from '../../components/whatAndHow/WhatAndHow';
 
 function Impact() {
 	return (
 		<>
-			<ThemeProvider theme={responsiveTheme}>
-				<CssBaseline />
-				<NavBar />
-				<Header header={dataHeader} color='#C62C46' />
-				<OurCause />
-				<Strategies />
-				<Reaches />
-				<TestimonyVideo />
-				<ContributionImpact />
-				<Footer />
-			</ThemeProvider>
+			<CssBaseline />
+			<NavBar color='#C62C46' />
+			<Header header={dataHeader} color='#C62C46' />
+			<OurCause />
+			<Strategies />
+			<Reaches />
+			<TestimonyVideo />
+			<ContributionImpact />
+			<WhatAndHow />
+			<Footer />
 		</>
 	);
 }

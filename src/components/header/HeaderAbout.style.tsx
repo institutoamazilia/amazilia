@@ -47,11 +47,11 @@ const image = styled('img')(({ theme }) => ({
 	zIndex: '0',
 	[theme.breakpoints.down('md')]: {},
 	[theme.breakpoints.down(1580)]: {
-		opacity: '0.08',
 		right: '5rem',
 		bottom: '20%',
 	},
-	[theme.breakpoints.down(1200)]: {
+	[theme.breakpoints.down(1336)]: {
+		opacity: '0.08',
 		right: '5rem',
 		bottom: '20%',
 		width: '40rem',

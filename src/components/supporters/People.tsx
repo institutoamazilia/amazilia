@@ -1,5 +1,5 @@
 import { Box, Typography, Button } from '@mui/material';
-import { data } from './data';
+import { data, dataAbout } from './data';
 import { v4 as uuidv4 } from 'uuid';
 import COLORS from '../layout/colors';
 import * as Layout from './People.styles';
@@ -27,7 +27,7 @@ export default function People() {
 				<Layout.teamContainer
 					sx={{ paddingLeft: { sm: '2rem', md: 0 } }}
 				>
-					{data.images3.map((item, index) => (
+					{dataAbout.map((item, index) => (
 						<Layout.teamItem key={uuidv4()}>
 							<Box>
 								<Layout.teamImage src={item.img} />

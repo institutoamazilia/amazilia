@@ -50,4 +50,50 @@ const onuImage = styled('img')(({ theme }) => ({
 	},
 }));
 
-export { mainSection, Title, sectionTop, sectionSubtitle, subtitle, onuImage };
+const sectionImages = styled(Box)(({ theme }) => ({
+	display: 'flex',
+	flexDirection: 'row',
+	marginBottom: '4rem',
+	height: '22.063rem',
+}));
+
+const outro = styled(Box)(({ theme }) => ({
+	display: 'flex',
+	flexDirection: 'row',
+	alignItems: 'flex-end',
+}));
+
+const boxImages = styled(Box)(({ theme }) => ({
+	display: 'flex',
+	flexDirection: 'column',
+	width: 'min-content',
+	alignItems: 'flex-end',
+}));
+
+const imagesInfo = styled(Typography)(({ theme }) => ({
+	color: '#495456',
+	lineHeight: '150%',
+	width: 'auto',
+}));
+
+const bottomLink = styled('a')(({ theme }) => ({
+	color: '#4C4B8F',
+	letterSpacing: '0.15px',
+	lineHeight: '150%',
+	textDecoration: 'underline',
+	fontWeight: '600',
+}));
+
+export {
+	mainSection,
+	Title,
+	sectionTop,
+	sectionSubtitle,
+	subtitle,
+	onuImage,
+	sectionImages,
+	boxImages,
+	imagesInfo,
+	outro,
+	bottomLink,
+};
