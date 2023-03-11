@@ -11,6 +11,8 @@ import Contribution from '../../components/contribution/Contribution';
 import Supporters from '../../components/supporters/Supporters';
 import Footer from '../../components/footer/Footer';
 import { dataHeader } from '../../components/header/data';
+import HowToHelpCards from '../../components/howToHelpCards/HowToHelpCards';
+import TypewriterTest from '../../components/typewriterTest/typewriterTest';
 
 export default function Home() {
 	return (
@@ -23,6 +25,7 @@ export default function Home() {
 			<Testimony />
 			<Results />
 			<Contribution />
+			<HowToHelpCards />
 			<Supporters />
 			<Footer />
 		</div>

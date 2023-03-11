@@ -28,13 +28,14 @@ const sectionTitle = styled(Typography)(({ theme }) => ({
 	maxWidth: '55rem',
 	marginTop: '2rem',
 	wordBreak: 'break-word',
+	position: 'absolute',
 }));
 
 const sectionCardsContainer = styled(Box)(({ theme }) => ({
 	display: 'flex',
 	flexWrap: 'wrap',
 	justifyContent: 'space-between',
-	marginTop: '3.25rem',
+	marginTop: '15rem',
 }));
 
 const containerCard = styled(Box)(({ theme }) => ({

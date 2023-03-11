@@ -1,5 +1,5 @@
 import { styled } from '@mui/material/styles';
-import { Box, Typography } from '@mui/material';
+import { Box, Button } from '@mui/material';
 
 const section = styled(Box)(({ theme }) => ({
 	display: 'flex',
@@ -31,6 +31,16 @@ const image = styled('img')(({ theme }) => ({
 	},
 }));
 
+const knowMore = styled(Button)(({ theme }) => ({
+	color: '#4C4B8F',
+	textDecoration: 'underline',
+	textTransform: 'none',
+	'&:hover': {
+		textDecoration: 'underline',
+	},
+	marginTop: '1rem',
+}));
+
 //Contribution Impact Page
 
-export { section, aside, image };
+export { section, aside, image, knowMore };

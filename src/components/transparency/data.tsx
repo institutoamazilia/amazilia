@@ -1,3 +1,5 @@
+import EthicAndCulture from '../../files/Código de Ética e Conduta_Amazilia_2023.pdf';
+
 interface IMain {
 	title: string;
 	text: string;
@@ -42,7 +44,7 @@ const Ethics: IEthics = {
 	fileName2: 'CÓDIGO DE ÉTICA E CONDUTA',
 	fileName3: 'organograma',
 	fileLink1: '',
-	fileLink2: '',
+	fileLink2: EthicAndCulture,
 	fileLink3: '',
 };
 

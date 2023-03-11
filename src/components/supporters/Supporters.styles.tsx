@@ -18,14 +18,16 @@ const supportersContainer = styled(Box)(({ theme }) => ({
 	paddingRight: '2rem',
 	paddingTop: '2rem',
 	display: 'flex',
-	justifyContent: 'space-between',
-
 	[theme.breakpoints.down('md')]: {
 		gap: '2rem',
 		flexDirection: 'column',
 		justifyContent: 'center',
 		alignItems: 'center',
 	},
+}));
+
+const supporterPhotographer = styled(Button)(({ theme }) => ({
+	marginLeft: 'auto',
 }));
 
 const teamItem = styled(Box)(({ theme }) => ({
@@ -63,6 +65,7 @@ const meetTeam = styled(Button)(({ theme }) => ({
 export {
 	section,
 	supportersContainer,
+	supporterPhotographer,
 	teamItem,
 	teamContainer,
 	teamImage,

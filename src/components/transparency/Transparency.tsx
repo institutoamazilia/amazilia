@@ -21,6 +21,7 @@ export default function Transparency() {
 						<Layout.containerFile>
 							<Layout.fileButton
 								href={Reports.fileLink}
+								target='_blank'
 								startIcon={<PictureAsPdfIcon />}
 							>
 								{Reports.fileName}
@@ -34,18 +35,21 @@ export default function Transparency() {
 						<Layout.containerFile>
 							<Layout.fileButton
 								href={Ethics.fileLink1}
+								target='_blank'
 								startIcon={<PictureAsPdfIcon />}
 							>
 								{Ethics.fileName1}
 							</Layout.fileButton>
 							<Layout.fileButton
 								href={Ethics.fileLink2}
+								target='_blank'
 								startIcon={<PictureAsPdfIcon />}
 							>
 								{Ethics.fileName2}
 							</Layout.fileButton>
 							<Layout.fileButton
 								href={Ethics.fileLink3}
+								target='_blank'
 								startIcon={<PictureAsPdfIcon />}
 							>
 								{Ethics.fileName3}

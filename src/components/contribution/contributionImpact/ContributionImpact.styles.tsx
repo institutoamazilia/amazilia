@@ -55,12 +55,14 @@ const sectionImages = styled(Box)(({ theme }) => ({
 	flexDirection: 'row',
 	marginBottom: '4rem',
 	height: '22.063rem',
+	flexWrap: 'wrap',
 }));
 
 const outro = styled(Box)(({ theme }) => ({
 	display: 'flex',
 	flexDirection: 'row',
 	alignItems: 'flex-end',
+	flexWrap: 'wrap',
 }));
 
 const boxImages = styled(Box)(({ theme }) => ({

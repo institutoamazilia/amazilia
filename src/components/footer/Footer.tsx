@@ -258,15 +258,22 @@ export default function Footer() {
 								<Layout.footerRedirectsTitle>
 									{item.title}
 								</Layout.footerRedirectsTitle>
-								<Layout.footerRedirectsTopics href={item.link1}>
+								<Layout.footerRedirectsTopics
+									href={item.link1}
+									target='_blank'
+								>
 									{item.topic1}
 								</Layout.footerRedirectsTopics>
-								<Layout.footerRedirectsTopics href={item.link2}>
+								<Layout.footerRedirectsTopics
+									href={item.link2}
+									target='_blank'
+								>
 									{item.topic2}
 								</Layout.footerRedirectsTopics>
 								{item.contact ? (
 									<Layout.footerRedirectsTopics
 										href={item.link3}
+										target='_blank'
 										style={{ marginTop: '1.5rem' }}
 									>
 										{item.topic3}
@@ -274,15 +281,22 @@ export default function Footer() {
 								) : (
 									<Layout.footerRedirectsTopics
 										href={item.link3}
+										target='_blank'
 									>
 										{item.topic3}
 									</Layout.footerRedirectsTopics>
 								)}
-								<Layout.footerRedirectsTopics href={item.link4}>
+								<Layout.footerRedirectsTopics
+									href={item.link4}
+									target='_blank'
+								>
 									{item.topic4}
 								</Layout.footerRedirectsTopics>
 
-								<Layout.footerRedirectsTopics href={item.link5}>
+								<Layout.footerRedirectsTopics
+									href={item.link5}
+									target='_blank'
+								>
 									{item.topic5}
 								</Layout.footerRedirectsTopics>
 							</Layout.footerRedirects>

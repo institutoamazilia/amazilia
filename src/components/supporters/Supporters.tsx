@@ -1,9 +1,10 @@
-import { Box, Typography } from '@mui/material';
+import { Box, Button, Typography } from '@mui/material';
 import React from 'react';
 import { data, dataHome } from './data';
 import { v4 as uuidv4 } from 'uuid';
 import COLORS from '../layout/colors';
 import * as Layout from './Supporters.styles';
+import { Link } from 'react-router-dom';
 
 export default function Supporters() {
 	return (
@@ -27,6 +28,11 @@ export default function Supporters() {
 						/>
 					</Box>
 				))}
+				<Layout.supporterPhotographer>
+					<Link to={data.linkRenan} target='_blank'>
+						<img src={data.imageRenan} />
+					</Link>
+				</Layout.supporterPhotographer>
 			</Layout.supportersContainer>
 			{/*------------- section 2 ------------- */}
 
@@ -100,13 +106,11 @@ export default function Supporters() {
 					textAlign: 'center',
 				}}
 			>
-				<Layout.meetTeam
-					variant='outlined'
-					size='large'
-					href='/about#Apoiadores'
-				>
-					{data.button}
-				</Layout.meetTeam>
+				<Link to='/about#Apoiadores' target='_blank'>
+					<Layout.meetTeam variant='outlined' size='large'>
+						{data.button}
+					</Layout.meetTeam>
+				</Link>
 			</Box>
 		</Layout.section>
 	);

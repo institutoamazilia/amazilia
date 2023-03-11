@@ -90,6 +90,7 @@ const sectionFooterRedirects = styled(Box)(({ theme }) => ({
 	display: 'flex',
 	flexDirection: 'row',
 	justifyContent: 'space-between',
+	flexWrap: 'wrap',
 }));
 
 const footerRedirects = styled(Box)(({ theme }) => ({

@@ -1,6 +1,7 @@
 import * as Layout from './ourCause.styles';
 import { questionTitle, sectionTitle, Cards, popUp } from './data';
 import { useState } from 'react';
+import Typewriter from 'typewriter-effect';
 
 export default function ourCause() {
 	const [show, setShow] = useState(false);
@@ -18,7 +19,22 @@ export default function ourCause() {
 	return (
 		<Layout.mainContainer>
 			<Layout.questionTitle>{questionTitle}</Layout.questionTitle>
-			<Layout.sectionTitle>{sectionTitle}</Layout.sectionTitle>
+			<Layout.sectionTitle>
+				<Typewriter
+					options={{
+						loop: true,
+					}}
+					onInit={typewriter => {
+						typewriter
+							.typeString(sectionTitle)
+							.pauseFor(2000)
+							.deleteAll()
+							.typeString('pipipipopopo')
+							.deleteAll()
+							.start();
+					}}
+				/>
+			</Layout.sectionTitle>
 			<Layout.sectionCardsContainer>
 				{Cards.map(item => {
 					return (

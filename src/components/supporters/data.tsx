@@ -1,18 +1,20 @@
 import image1 from '../../assets/google.png';
 import image2 from '../../assets/machado.png';
 import image3 from '../../assets/mindsight.png';
-import image4 from '../../assets/Renan.png';
-import image5 from '../../assets/seo-services-logotipo 1.png';
+import imageRenan from '../../assets/Renan.png';
 import ibab from '../../assets/ibab.png';
 import melissa from '../../assets/melissa.png';
 import doug from '../../assets/doug.png';
 import fernanda from '../../assets/fernanda.png';
 import braga from '../../assets/braga.png';
 import taina from '../../assets/taina.png';
+import betania from '../../assets/betania.png';
 
 const data = {
 	title: 'Agradecemos nossos apoiadores pro bono',
-	images: [image1, image2, image3, image4, image5],
+	images: [image1, image2, image3],
+	imageRenan: imageRenan,
+	linkRenan: 'https://www.instagram.com/renanbenedit/',
 	title2: 'Agradecemos nossos parceiros de projetos',
 	images2: ibab,
 	title3: 'Gente que faz o Amazilia acontecer',
@@ -55,7 +57,14 @@ const dataAbout = [
 		title: 'Douglas Alves',
 		responsibility: 'Vice-Presidente',
 		more: 'Quinze anos de experiência em gestão de projetos sociais (cultura, educação e comunicação) na Fundação Tide Setubal, CENPEC e Itaú Cultural. ',
-		linkedin: '',
+		linkedin: 'https://www.linkedin.com/in/doug-alves-brand/',
+	},
+	{
+		img: braga,
+		title: 'Cristina Rocha',
+		responsibility: 'Cultura e pessoas',
+		more: '',
+		linkedin: 'https://www.linkedin.com/in/cristinna-roca-79b4068a/',
 	},
 	{
 		img: fernanda,
@@ -65,18 +74,11 @@ const dataAbout = [
 		linkedin: 'https://www.linkedin.com/in/fernandaribela/',
 	},
 	{
-		img: braga,
-		title: 'Fernanda Braga',
-		responsibility: 'Comunicação',
-		more: '',
-		linkedin: '',
-	},
-	{
-		img: braga,
-		title: 'Larissa S. Aoki',
+		img: betania,
+		title: 'Betania Melo',
 		responsibility: 'Comunicação',
 		more: 'Graduada em Publicidade e Propaganda pela Universidade Mackenzie (2004-2007), atuou por 15 anos na área de Marketing do Banco Paulista S.A.',
-		linkedin: '',
+		linkedin: 'https://www.linkedin.com/in/betania-melo/',
 	},
 	{
 		img: taina,
